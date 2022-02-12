@@ -10,9 +10,7 @@ import Browse from './components/Browse'
 function App() {
   return (
 		<div>
-			<nav>
-				<Nav />
-			</nav>
+			<Nav />
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/favorites' element={<Faves />} />
