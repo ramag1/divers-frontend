@@ -18,11 +18,14 @@ function Browse(props) {
 	}
 
 	return (
-		<ul>
-			{sites.map((site) => (
-				<li key={site.id}><Link to={`/site/${site.id}`}>{site.name}</Link></li>
-			))}
-		</ul>
+        <div>
+            <p>Don't see a site? <Link to='/createsite'>Create here!</Link></p>
+            <ul>
+                {sites.map((site) => (
+                    <li key={site.id}><Link to={`/site/${site.id}`}>{site.name}</Link></li>
+                ))}
+            </ul>
+        </div>
 	);
 }
 

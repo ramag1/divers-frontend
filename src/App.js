@@ -9,7 +9,7 @@ import Conservation from './components/Conservation'
 import Browse from './components/Browse'
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Create from './components/Create';
+import CreateSite from './components/CreateSite';
 import SiteDetail from './components/SiteDetail';
 import SiteReview from './components/SiteReview';
 
@@ -97,7 +97,7 @@ function App() {
 					<Route path='/signup' element={<Signup />} />
 					<Route path='/browsesites' element={<Browse />} />
 					<Route path='/site/:id' element={<SiteDetail />} />
-					<Route path='/createsite' element={<Create />} />
+					<Route path='/createsite' element={<CreateSite />} />
 					<Route path='/mysites' element={<MySites />} />
 					<Route path='/site/:id/review' element={<SiteReview />} />
 					<Route path='/conservation' element={<Conservation />} />
