@@ -85,11 +85,14 @@ function App() {
 			<Nav />
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/login' element={<Login handleSetLoggedIn={handleSetLoggedIn} />}/>
+				<Route
+					path='/login'
+					element={<Login handleSetLoggedIn={handleSetLoggedIn} />}
+				/>
 				<Route path='/signup' element={<Signup />} />
-				<Route path='/browsesites' element={<Browse />} />
-				<Route path='/createsite' element={<Create />} />
-				<Route path='/mysites' element={<MySites />} />
+				<Route path='/browsesites' element={<Browse loggedIn={loggedIn} />} />
+				<Route path='/createsite' element={<Create loggedIn={loggedIn} />} />
+				<Route path='/mysites' element={<MySites userInfo={userInfo} loggedIn={loggedIn} />} />
 				<Route path='/conservation' element={<Conservation />} />
 			</Routes>
 		</div>
