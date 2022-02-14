@@ -82,7 +82,11 @@ function App() {
 
 	return (
 		<div>
-			<Nav />
+			<Nav
+				loggedIn={loggedIn}
+				handleLogout={handleLogout}
+				userInfo={userInfo}
+			/>
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route
@@ -92,7 +96,10 @@ function App() {
 				<Route path='/signup' element={<Signup />} />
 				<Route path='/browsesites' element={<Browse loggedIn={loggedIn} />} />
 				<Route path='/createsite' element={<Create loggedIn={loggedIn} />} />
-				<Route path='/mysites' element={<MySites userInfo={userInfo} loggedIn={loggedIn} />} />
+				<Route
+					path='/mysites/:id'
+					element={<MySites userInfo={userInfo} loggedIn={loggedIn} />}
+				/>
 				<Route path='/conservation' element={<Conservation />} />
 			</Routes>
 		</div>
