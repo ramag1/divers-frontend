@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams , Navigate} from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../userContext';
 
@@ -19,7 +19,11 @@ function MySites(props) {
 	}, []);
 
 	if (!userInfo) {
-		return <p>Please log in to see your sites!</p>
+		return (
+			<p>
+				<Navigate to='/login'/>
+			</p>
+		);
 	}
 	if (!mySites.length) {
 		return <p>Loading...</p>;
@@ -27,8 +31,8 @@ function MySites(props) {
 
 
 	return (
-		<div>
-			<h2>{userInfo.username}</h2>
+		<div className='App'>
+			<h2>Divers Discovery Details for {userInfo.username}:</h2>
 			<div>
 				<h2>Visited</h2>
 				{mySites

@@ -85,6 +85,7 @@ function App() {
 
 	return (
 		<div>
+      <h1>Divers Discovery</h1>
 			<UserContext.Provider
 				value={{ loggedIn, handleLogout, userInfo, handleSetLoggedIn }}>
 				<Nav />
@@ -92,8 +93,7 @@ function App() {
 					<Route path='/' element={<Home />} />
 					<Route
 						path='/login'
-						element={<Login handleSetLoggedIn={handleSetLoggedIn} />}
-					/>
+						element={<Login />} />
 					<Route path='/signup' element={<Signup />} />
 					<Route path='/browsesites' element={<Browse />} />
 					<Route path='/site/:id' element={<SiteDetail />} />

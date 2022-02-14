@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useState , useContext} from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import ReviewForm from './ReviewForm';
 import API_URL from '../apiConfig';
+import { UserContext } from '../userContext';
 
 function SiteReview(props) {
+    const {userInfo} = useContext(UserContext);
 	const { id } = useParams();
 	let navigate = useNavigate();
 	const initialState = {
@@ -39,6 +41,11 @@ function SiteReview(props) {
 			}
 		} catch (error) {}
 	}
+
+	if (!userInfo) {
+		return <p>Please <Link to='/login'>log in</Link> to review this site!</p>;
+	}
+
 	return (
 		<div>
 			<h2>Write a Review</h2>
