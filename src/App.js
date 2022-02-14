@@ -1,6 +1,7 @@
 import './App.css';
 import {Route,Routes, useNavigate} from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import { UserContext } from './userContext';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import MySites from './components/MySites';
@@ -10,6 +11,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Create from './components/Create';
 import SiteDetail from './components/SiteDetail';
+import SiteReview from './components/SiteReview';
 
 import API_URL from './apiConfig';
 
@@ -83,27 +85,24 @@ function App() {
 
 	return (
 		<div>
-			<Nav
-				loggedIn={loggedIn}
-				handleLogout={handleLogout}
-				userInfo={userInfo}
-			/>
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route
-					path='/login'
-					element={<Login handleSetLoggedIn={handleSetLoggedIn} />}
-				/>
-				<Route path='/signup' element={<Signup />} />
-				<Route path='/browsesites' element={<Browse loggedIn={loggedIn} />} />
-				<Route path='/site/:id' element={<SiteDetail loggedIn={loggedIn} />} />
-				<Route path='/createsite' element={<Create loggedIn={loggedIn} />} />
-				<Route
-					path='/mysites/:id'
-					element={<MySites userInfo={userInfo} loggedIn={loggedIn} />}
-				/>
-				<Route path='/conservation' element={<Conservation />} />
-			</Routes>
+			<UserContext.Provider
+				value={{ loggedIn, handleLogout, userInfo, handleSetLoggedIn }}>
+				<Nav />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route
+						path='/login'
+						element={<Login handleSetLoggedIn={handleSetLoggedIn} />}
+					/>
+					<Route path='/signup' element={<Signup />} />
+					<Route path='/browsesites' element={<Browse />} />
+					<Route path='/site/:id' element={<SiteDetail />} />
+					<Route path='/createsite' element={<Create />} />
+					<Route path='/mysites' element={<MySites />} />
+					<Route path='/site/:id/review' element={<SiteReview />} />
+					<Route path='/conservation' element={<Conservation />} />
+				</Routes>
+			</UserContext.Provider>
 		</div>
 	);
 }

@@ -19,7 +19,7 @@ function Nav(props) {
 						<Link to='/browsesites'>Browse Sites</Link>
 					</li>
 					<li>
-						<Link to='/mysites/:id'>My Sites</Link>
+						<Link to='/mysites/'>My Sites</Link>
 					</li>
 					<li>
 						<Link to='/conservation'>Conservation</Link>

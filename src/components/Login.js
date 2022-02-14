@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
 import API_URL from '../apiConfig';
+import { UserContext } from '../userContext';
 
-const Login = ({ handleSetLoggedIn }) => {
+const Login = () => {
+	const {handleSetLoggedIn} = useContext(UserContext);
 	const initialFormData = {
 		email: '',
 		password: '',
