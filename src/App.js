@@ -9,6 +9,7 @@ import Browse from './components/Browse'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Create from './components/Create';
+import SiteDetail from './components/SiteDetail';
 
 import API_URL from './apiConfig';
 
@@ -33,10 +34,10 @@ function App() {
 					Authorization: `Token ${localStorage.getItem('token')}`,
 				},
 			});
-			console.log(response);
+			// console.log(response);
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data);
+				// console.log(data);
 				setUserInfo(data);
 			} else {
 				setUserInfo(null);
@@ -95,6 +96,7 @@ function App() {
 				/>
 				<Route path='/signup' element={<Signup />} />
 				<Route path='/browsesites' element={<Browse loggedIn={loggedIn} />} />
+				<Route path='/site/:id' element={<SiteDetail loggedIn={loggedIn} />} />
 				<Route path='/createsite' element={<Create loggedIn={loggedIn} />} />
 				<Route
 					path='/mysites/:id'
