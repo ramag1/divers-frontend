@@ -1,0 +1,12 @@
+DESCRIPTION:
+Diving Tracker & Information app which will featured a browsable catalog of global dive sites to add to your curated list of Visited sites, as well as a Bucket List of sites you wish to visit. Users can add their own dive sites if not visible in the seeded data.
+
+PROCESS & PLANNING:
+Build out user facing components
+Add form components and API interaction for CRUD functionality
+Authenticate users/login/signup/logout
+UseContext to pass user information state allowing for filtered API responses
+Ensure routes close the loop on user experience:
+    Route user to all of their reviews if they post new review on existing site
+    Route user to all sites posted if they post new site
+    Route user to updated review upon edit/put action
