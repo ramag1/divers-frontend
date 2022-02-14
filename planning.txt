@@ -3,7 +3,7 @@ Diving Tracker & Information app which will featured a browsable catalog of glob
 
 PROCESS & PLANNING:
 Build out user facing components
-Add form components and API interaction for CRUD functionality
+Add form components and API interaction for CRUD functionality on 2 models: Review and Site
 Authenticate users/login/signup/logout
 UseContext to pass user information state allowing for filtered API responses
 Ensure routes close the loop on user experience:
