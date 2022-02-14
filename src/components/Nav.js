@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import { UserContext } from '../userContext';
 
 function Nav(props) {
+	const {handleLogout} = useContext(UserContext);
+
     return (
 			<nav>
 				<ul className='nav__ul'>
@@ -25,7 +28,7 @@ function Nav(props) {
 						<Link to='/conservation'>Conservation</Link>
 					</li>
 					<li>
-						<Link to='/' onClick={props.handleLogout}>Log Out</Link>
+						<Link to='/' onClick={handleLogout}>Log Out</Link>
 					</li>
 				</ul>
 			</nav>

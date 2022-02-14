@@ -9,17 +9,20 @@ function MySites(props) {
 	const [mySites, setMySites] = useState([]);
 	// const {id} = useParams();
 	const {userInfo} = useContext(UserContext);
-	console.log(userInfo)
+	// console.log(userInfo)
 
 	useEffect(() => {
 		axios(`http://localhost:8000/api/reviews/`)
 			.then((res) => setMySites(res.data))
-			.then (console.log(mySites))
+			// .then (console.log(mySites))
 			.catch(console.error);
 	}, []);
 
+	if (!userInfo) {
+		return <p>Please log in to see your sites!</p>
+	}
 	if (!mySites.length) {
-		return <h1>Loading...</h1>;
+		return <p>Loading...</p>;
 	}
 
 
