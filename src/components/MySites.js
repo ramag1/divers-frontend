@@ -14,7 +14,7 @@ function MySites(props) {
 	useEffect(() => {
 		axios(`http://localhost:8000/api/reviews/`)
 			.then((res) => setMySites(res.data))
-			// .then (console.log(mySites))
+			.then (console.log(mySites))
 			.catch(console.error);
 	}, []);
 
@@ -42,7 +42,7 @@ function MySites(props) {
 							visited.owner === `${userInfo.username}`
 					)
 					.map((visited) => (
-						<li key={visited.id}>{visited.site}</li>
+						<li key={visited.id}>{visited.site_name}</li>
 					))}
 			</div>
 			<div>
@@ -54,7 +54,7 @@ function MySites(props) {
 							favorite.owner === `${userInfo.username}`
 					)
 					.map((favorite) => (
-						<li key={favorite.id}>{favorite.site}</li>
+						<li key={favorite.id}>{favorite.site_name}</li>
 					))}
 			</div>
 			<div>
@@ -66,7 +66,7 @@ function MySites(props) {
 							bucket_list.owner === `${userInfo.username}`
 					)
 					.map((bucket_list) => (
-						<li key={bucket_list.id}>{bucket_list.site}</li>
+						<li key={bucket_list.id}>{bucket_list.site_name}</li>
 					))}
 			</div>
 		</div>
