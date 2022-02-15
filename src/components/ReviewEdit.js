@@ -1,53 +1,66 @@
-import { useState, useEffect } from 'react';
-import ReviewForm from './ReviewForm';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useState,  useContext } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import API_URL from '../apiConfig';
+import ReviewForm from './ReviewForm';
+import { UserContext } from '../userContext';
 
 function ReviewEdit(props) {
-	const { id } = useParams();
+	const { userInfo } = useContext(UserContext);
+	const { id, name } = useParams();
+    //shorthand Navigate here
 	let navigate = useNavigate();
-	const [formData, setFormData] = useState(null);
-	const [error, setError] = useState(false);
-	async function getReviewData() {
-		try {
-			const response = await fetch(`API_URL + api/reviews/${id}`);
-			const data = await response.json();
-			setFormData(data);
-		} catch (error) {}
-	}
+	const initialState = {
+		visited: false,
+		favorite: false,
+		bucket_list: false,
+		comments: '',
+	};
+	const [formData, setFormData] = useState(initialState);
+
+
 	function handleChange(event) {
 		setFormData({ ...formData, [event.target.name]: event.target.value });
 	}
+	//reference class code from authentication lecture
 	async function handleSubmit(event) {
 		event.preventDefault();
+		const data = { ...formData, site_id: id, site_name: name };
+		console.log(data);
+
 		try {
-			const response = await fetch(`API_URL + api/reviews/${id}`, {
+			const response = await fetch(API_URL + `api/reviews/${id}`, {
 				method: 'PUT',
 				headers: {
-					'Content-Type': 'application/json',
 					Authorization: `Token ${localStorage.getItem('token')}`,
+					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify(formData),
+				body: JSON.stringify(data),
 			});
+			console.log(response);
 			if (response.status === 200) {
+				const data = await response.json();
+				console.log(data);
 				navigate(`/mysites`);
 			}
 		} catch (error) {}
 	}
-	useEffect(() => {
-		getReviewData();
-	}, []);
+
+	if (!userInfo) {
+		return (
+			<p>
+				Please <Link to='/login'>log in</Link> to edit this site!
+			</p>
+		);
+	}
+
 	return (
 		<div>
-			<h2>Edit Review</h2>
-			{formData && (
-				<ReviewForm
-					formData={formData}
-					handleChange={handleChange}
-					handleSubmit={handleSubmit}
-					error={error}
-				/>
-			)}
+			<h2>Edit your review for {name}:</h2>
+			<ReviewForm
+				handleSubmit={handleSubmit}
+				handleChange={handleChange}
+				formData={formData}
+			/>
 		</div>
 	);
 }

@@ -1,77 +1,65 @@
-import { Form, Button, Alert } from 'react-bootstrap';
+import React from 'react'
 
-const SiteForm = ({
-	handleSubmit,
-	error,
-	site,
-	handleChange,
-	behavior,
-}) => {
+function SiteForm({handleSubmit, site, handleChange,}) {
+//deconstructed props from CreateSite
+
 	return (
-		<div className='w-75 p-3'>
-			<Form onSubmit={handleSubmit} encType='multipart/form-data'>
-				<Form.Group controlId='name'>
-					<Form.Label>Name</Form.Label>
-					<Form.Control
+		<div className='siteform__div'>
+			<form onSubmit={handleSubmit}>
+				<div className='siteform__name'>
+					<label>Name</label>
+					<input
 						required
-						autoFocus
 						type='text'
 						name='name'
 						value={site.name}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='country'>
-					<Form.Label>Country</Form.Label>
-					<Form.Control
+				</div>
+				<div className='siteform__country'>
+					<label>Country</label>
+					<input
 						required
 						type='text'
 						value={site.country}
 						onChange={handleChange}
 						name='country'
 					/>
-				</Form.Group>
-				<Form.Group controlId='max_depth'>
-					<Form.Label>Maximum Depth in Meters</Form.Label>
-					<Form.Control
+				</div>
+				<div className='siteform__maxdepth'>
+					<label>Maximum Depth in Meters</label>
+					<input
 						required
 						type='number'
 						value={site.max_depth}
 						onChange={handleChange}
 						name='max_depth'
 					/>
-				</Form.Group>
-				<Form.Group controlId='site_type'>
-					<Form.Label>Site Type</Form.Label>
-					<Form.Control
+				</div>
+				<div className='siteform__site_type'>
+					<label>Site Type</label>
+					<input
 						required
 						type='text'
 						value={site.site_type}
 						onChange={handleChange}
 						name='site_type'
 					/>
-				</Form.Group>
-				<Form.Group controlId='marine_life'>
-					<Form.Label>Notable Marine Life</Form.Label>
-					<Form.Control
+				</div>
+				<div className='marine_life'>
+					<label>Notable Marine Life</label>
+					<input
 						required
 						type='text'
 						value={site.marine_life}
 						onChange={handleChange}
 						name='marine_life'
 					/>
-				</Form.Group>
+				</div>
 
-				<Button className='mt-4' type='submit' disabled={error}>
-					{behavior === 'create' && 'Create'}
-					{behavior === 'edit' && 'Edit'}
-				</Button>
-				{error && (
-					<Alert variant='danger'>
-						Oops, something went wrong! Please try again!
-					</Alert>
-				)}
-			</Form>
+				<button className='siteform__btn' type='submit' > Create
+				</button>
+			</form>
 		</div>
 	);
 };

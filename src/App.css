@@ -3,8 +3,16 @@
 }
 body {
   font-family: 'Questrial', sans-serif;
+  /* background-image: url('./background1.png');
+  color: antiquewhite;
+  background-size: 100%;
+  background-repeat: no-repeat; */
+  /* background-color: rgba(3, 3, 3, 0.993); */
 }
+a {
 
+}
 h1 {
   font-family: 'Syncopate', sans-serif;
+
 }

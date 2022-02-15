@@ -27,7 +27,7 @@ function SiteDetail(props) {
 			<p>Maximum Depth is {detail.max_depth} meters</p>
             <p>Site type is {detail.site_type}</p>
 			<p>Notable marine life: {detail.marine_life}</p>
-            <p><Link to={`/site/${id}/createreview`}>Review this site or add to Bucket List?</Link></p>
+            <p><Link to={`/site/${id}/${detail.name}/createreview`}>Review this site or add to Bucket List?</Link></p>
 		</div>
 	);
 }

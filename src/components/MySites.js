@@ -44,7 +44,7 @@ function MySites(props) {
 					)
 					.map((visited) => (
 						<li key={visited.id}>
-							<Link to={`/site/${visited.site_id}/review/edit`}>{visited.site_name}</Link>
+							<Link to={`/site/${visited.site_id}/${visited.site_name}/review/edit`}>{visited.site_name}</Link>
 						</li>
 					))}
 			</div>
@@ -58,7 +58,7 @@ function MySites(props) {
 					)
 					.map((favorite) => (
 						<li key={favorite.id}>
-							<Link to={`/site/${favorite.site_id}/review/edit`}>{favorite.site_name}</Link>
+							<Link to={`/site/${favorite.site_id}/${favorite.site_name}/review/edit`}>{favorite.site_name}</Link>
 						</li>
 					))}
 			</div>
@@ -72,7 +72,7 @@ function MySites(props) {
 					)
 					.map((bucket_list) => (
 						<li key={bucket_list.id}>
-							<Link to={`/site/${bucket_list.site_id}/review/edit`}>{bucket_list.site_name}</Link>
+							<Link to={`/site/${bucket_list.site_id}/${bucket_list.site_name}/review/edit`}>{bucket_list.site_name}</Link>
 						</li>
 					))}
 			</div>

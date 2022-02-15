@@ -1,62 +1,94 @@
-import { Form, Button, Alert } from 'react-bootstrap';
+import React from "react";
 
-function ReviewForm({ handleSubmit, formData, handleChange, error }) {
+function ReviewForm({ handleSubmit, formData, handleChange }) {
+    //deconstructed props being passed from SiteReview
+
 	return (
-		<div className='w-75 p-3'>
-			<Form onSubmit={handleSubmit}>
-				<Form.Group controlId='visited'>
-					<Form.Label>Have you visited this site?</Form.Label>
-					<Form.Control
-						required
+		<div className='reviewform__div'>
+			<form onSubmit={handleSubmit}>
+				<div className='visited'>
+					Visited this site?
+					<input
 						autoFocus
-						type='boolean'
 						name='visited'
-						value={formData.visited}
+						type='radio'
+						label='Yes'
+						defaultChecked={formData.visited === true}
+						value={true}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='bucket_list'>
-					<Form.Label>Add site to Bucket List?</Form.Label>
-					<Form.Control
-						required
+					<label>Yes</label>
+					<input
 						autoFocus
-						type='boolean'
-						name='bucket_list'
-						value={formData.bucket_list}
+						name='visited'
+						type='radio'
+						label='No'
+						defaultChecked={formData.visited === false}
+						value={false}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='favorite'>
-					<Form.Label>Is this a favorite site?</Form.Label>
-					<Form.Control
-						required
+					<label>No</label>
+				</div>
+				<div className='favorite'>
+					Add to Favorites?
+					<input
 						autoFocus
-						type='boolean'
 						name='favorite'
-						value={formData.favorite}
+						type='radio'
+						label='Yes'
+						defaultChecked={formData.favorite === true}
+						value={true}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='comments'>
-					<Form.Label>Comments on this site: </Form.Label>
-					<Form.Control
-						required
+					<label>Yes</label>
+					<input
+						autoFocus
+						name='favorite'
+						type='radio'
+						label='No'
+						defaultChecked={formData.favorite === false}
+						value={false}
+						onChange={handleChange}
+					/>
+					<label>No</label>
+				</div>
+				<div className='bucket_list'>
+					Do you want to Bucket List this site?
+					<input
+						autoFocus
+						name='bucket_list'
+						type='radio'
+						label='Yes'
+						defaultChecked={formData.bucket_list === true}
+						value={true}
+						onChange={handleChange}
+					/>
+					<label>Yes</label>
+					<input
+						autoFocus
+						name='bucket_list'
+						type='radio'
+						label='No'
+						defaultChecked={formData.bucket_list === false}
+						value={false}
+						onChange={handleChange}
+					/>
+					<label>No</label>
+				</div>
+				<div className='comments'>
+					<label>Comments on this site: </label>
+					<input
 						as='textarea'
 						rows={5}
 						value={formData.comments}
 						onChange={handleChange}
 						name='comments'
 					/>
-				</Form.Group>
-				<Button className='mt-4' type='submit' disabled={error}>
+				</div>
+				<button className='reviewform__btn' type='submit'>
 					Submit
-				</Button>
-				{error && (
-					<Alert variant='danger'>
-						Oops, something went wrong! Please try again!
-					</Alert>
-				)}
-			</Form>
+				</button>
+			</form>
 		</div>
 	);
 }
