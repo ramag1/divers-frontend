@@ -30,6 +30,7 @@ function MySites(props) {
 	}
 
 
+
 	return (
 		<div className='App'>
 			<h2>Divers Discovery Details for {userInfo.username}:</h2>
@@ -42,7 +43,9 @@ function MySites(props) {
 							visited.owner === `${userInfo.username}`
 					)
 					.map((visited) => (
-						<li key={visited.id}>{visited.site_name}</li>
+						<li key={visited.id}>
+							<Link to={`/site/${visited.site_id}/review/edit`}>{visited.site_name}</Link>
+						</li>
 					))}
 			</div>
 			<div>
@@ -54,7 +57,9 @@ function MySites(props) {
 							favorite.owner === `${userInfo.username}`
 					)
 					.map((favorite) => (
-						<li key={favorite.id}>{favorite.site_name}</li>
+						<li key={favorite.id}>
+							<Link to={`/site/${favorite.site_id}/review/edit`}>{favorite.site_name}</Link>
+						</li>
 					))}
 			</div>
 			<div>
@@ -66,7 +71,9 @@ function MySites(props) {
 							bucket_list.owner === `${userInfo.username}`
 					)
 					.map((bucket_list) => (
-						<li key={bucket_list.id}>{bucket_list.site_name}</li>
+						<li key={bucket_list.id}>
+							<Link to={`/site/${bucket_list.site_id}/review/edit`}>{bucket_list.site_name}</Link>
+						</li>
 					))}
 			</div>
 		</div>

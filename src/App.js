@@ -12,6 +12,7 @@ import Signup from './components/Signup';
 import CreateSite from './components/CreateSite';
 import SiteDetail from './components/SiteDetail';
 import SiteReview from './components/SiteReview';
+import ReviewEdit from './components/ReviewEdit';
 
 import API_URL from './apiConfig';
 
@@ -85,21 +86,20 @@ function App() {
 
 	return (
 		<div>
-      <h1>Divers Discovery</h1>
+			<h1>Divers Discovery</h1>
 			<UserContext.Provider
 				value={{ loggedIn, handleLogout, userInfo, handleSetLoggedIn }}>
 				<Nav />
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route
-						path='/login'
-						element={<Login />} />
+					<Route path='/login' element={<Login />} />
 					<Route path='/signup' element={<Signup />} />
 					<Route path='/browsesites' element={<Browse />} />
 					<Route path='/site/:id' element={<SiteDetail />} />
 					<Route path='/createsite' element={<CreateSite />} />
 					<Route path='/mysites' element={<MySites />} />
-					<Route path='/site/:id/review' element={<SiteReview />} />
+					<Route path='/site/:id/createreview' element={<SiteReview />} />
+					<Route path='/site/:id/review/edit' element={<ReviewEdit />} />
 					<Route path='/conservation' element={<Conservation />} />
 				</Routes>
 			</UserContext.Provider>

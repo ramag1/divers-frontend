@@ -31,6 +31,7 @@ function SiteReview(props) {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(data),
+
 			});
 			console.log(response);
 			// status 201 === success
@@ -48,7 +49,7 @@ function SiteReview(props) {
 
 	return (
 		<div>
-			<h2>Write a Review</h2>
+			<h2>Write a Review </h2>
 			<ReviewForm
 				handleSubmit={handleSubmit}
 				handleChange={handleChange}
