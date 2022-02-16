@@ -8,6 +8,7 @@ body {
   background-image: url('./background3.jpeg');
   color: antiquewhite;
   background-position: cover;
+  background-size: 160%;
   background-repeat: no-repeat;
 }
 

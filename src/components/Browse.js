@@ -20,8 +20,8 @@ function Browse(props) {
 	return (
         <div className='browse__container'>
             <h2>Browse our Sites</h2>
+            <p className='browse__p'>Don't see your favorite site? <Link to='/createsite'>Create one here!</Link></p>
             <div className='browse__div'>
-                <p>Don't see your favorite site? <Link to='/createsite'>Create one here!</Link></p>
                 <ul className='browse__ul'>
                     {sites.map((site) => (
                         <li key={site.id}><Link to={`/site/${site.id}`}>{site.name} - {site.country}</Link></li>

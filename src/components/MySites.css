@@ -47,7 +47,6 @@ h2 {
     grid-template-rows: .5fr 1fr 1fr 1fr;
     grid-template-columns: 1fr ;
     height: 70vh;
-    /* background: rgba(245, 245, 245, 0.521); */
 }
 h2 {
     grid-row: 1;
