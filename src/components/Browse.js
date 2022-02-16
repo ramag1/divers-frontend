@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import './Browse.css'
 
 function Browse(props) {
 	const [sites, setSites] = useState([]);
@@ -16,11 +17,11 @@ function Browse(props) {
 	}
 
 	return (
-        <div>
-            <p>Don't see a site? <Link to='/createsite'>Create here!</Link></p>
-            <ul>
+        <div className='browse__container'>
+            <h2>Don't see a site? <Link to='/createsite'>Create one here!</Link></h2>
+            <ul className='browse__ul'>
                 {sites.map((site) => (
-                    <li key={site.id}><Link to={`/site/${site.id}`}>{site.name}</Link></li>
+                    <li key={site.id}><Link to={`/site/${site.id}`}>{site.name} - {site.country}</Link></li>
                 ))}
             </ul>
         </div>

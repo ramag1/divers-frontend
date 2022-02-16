@@ -1,0 +1,27 @@
+.browse__container {
+    display: grid;
+    grid-template-rows: .5fr 3.5fr;
+    grid-template-columns: 1fr;
+    height: 70vh;
+    /* background: rgba(245, 245, 245, 0.521); */
+}
+h2 {
+    grid-row: 1;
+}
+a {
+    color:whitesmoke;
+    text-decoration: underline;
+}
+.browse__ul {
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-right: 1em;
+    margin-left:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+.browse__ul a {
+    color: rgba(0, 139, 139, 0.842);
+
+}

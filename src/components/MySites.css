@@ -1,0 +1,88 @@
+.mysites__container {
+    display: grid;
+    grid-template-rows: .5fr 3.5fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 70vh;
+    /* background: rgba(245, 245, 245, 0.521); */
+}
+h2 {
+    grid-row: 1;
+    grid-column: 1/span 3;
+}
+.mysites__visited_div {
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-right: 1em;
+    margin-left:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+
+.mysites__favorites_div {
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-right: 1em;
+    margin-left:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+
+.mysites__bucket_div {
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-right: 1em;
+    margin-left:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+
+@media only screen and (max-width: 500px) {
+
+.mysites__container {
+    display: grid;
+    grid-template-rows: .5fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr ;
+    height: 70vh;
+    /* background: rgba(245, 245, 245, 0.521); */
+}
+h2 {
+    grid-row: 1;
+    grid-column: 1/span 3;
+}
+.mysites__visited_div {
+    grid-row: 2;
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+
+.mysites__favorites_div {
+    grid-row: 3;
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+
+.mysites__bucket_div {
+    grid-row: 4;
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom:1em;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.521);
+}
+
+}

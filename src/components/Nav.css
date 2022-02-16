@@ -3,6 +3,7 @@
     grid-template-columns: 1fr .5fr;
     grid-template-rows: 1fr;
     color: rgba(0, 139, 139, 0.842);
+    background: rgba(245, 245, 245, 0.808);
 }
 
 .nav__h1{

@@ -3,6 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
 import API_URL from '../apiConfig';
 import { UserContext } from '../userContext';
+import './Login.css'
 
 const Login = () => {
 	const { handleSetLoggedIn } = useContext(UserContext);
@@ -40,10 +41,10 @@ const Login = () => {
 		} catch (error) {}
 	};
 	return (
-		<div>
+		<div className='login__div'>
 			<h2>Log in</h2>
 			<form className='login__form' onSubmit={_handleLogin}>
-				<div className='email'>
+				<div className='login__field'>
 					<label>Email</label>
 					<input
 						required
@@ -53,7 +54,7 @@ const Login = () => {
 						onChange={handleChange}
 					/>
 				</div>
-				<div className='password'>
+				<div className='login__field'>
 					<label>Password</label>
 					<input
 						required
@@ -63,7 +64,7 @@ const Login = () => {
 						onChange={handleChange}
 					/>
 				</div>
-				<button type='submit'>Login</button>
+				<button className='login__btn' type='submit'>Login</button>
 			</form>
 		</div>
 	);

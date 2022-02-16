@@ -1,26 +1,25 @@
-.signup__div {
-    background: rgba(245, 245, 245, 0.616);
+.login__div {
+    margin-top: 40px;
+    background: rgba(245, 245, 245, 0.521);
     height: 50vh;
     width: 60vw;
     margin: auto;
     border-radius: 10%;
     border: 2px whitesmoke solid;
-    color: rgba(0, 139, 139, 0.842);
+    color: rgb(90, 90, 90);
 }
 h2 {
     padding-top: 1em;
-    /* margin: auto; */
+
 }
-.signup__form {
-    /* margin: auto; */
+.login__form {
+
     padding-top: 1em;
-    grid-column: 2;
-    grid-row: 2;
     display: flex;
     flex-direction: column;
 }
 
-.signup__field {
+.login__field {
     padding: .5em;
     justify-items: flex-start;
 }
@@ -32,7 +31,7 @@ label {
 input {
 
 }
-.signup__btn {
+.login__btn {
     background-color: transparent;
     border: none;
     color: rgba(0, 139, 139, 0.842);
