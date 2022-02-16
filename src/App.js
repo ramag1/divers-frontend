@@ -1,4 +1,4 @@
-import {Route,Routes, useNavigate} from 'react-router-dom';
+import {Route,Routes, useNavigate, Link} from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import { UserContext } from './userContext';
 import './App.css';
@@ -80,7 +80,6 @@ function App() {
 
 	return (
 		<div>
-			<h1>Divers Discovery</h1>
 			<UserContext.Provider
 				value={{ loggedIn, handleLogout, userInfo, handleSetLoggedIn }}>
 				<Nav />
