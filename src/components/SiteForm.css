@@ -1,0 +1,34 @@
+.siteform__div {
+	margin-top: 40px;
+	background: rgba(245, 245, 245, 0.521);
+	height: 50vh;
+	width: 60vw;
+	margin: auto;
+	border-radius: 10%;
+	border: 2px whitesmoke solid;
+	color: rgb(90, 90, 90);
+}
+h2 {
+	padding-top: 1em;
+}
+
+.siteform__field {
+	padding: 0.5em;
+	justify-items: flex-start;
+}
+
+label {
+	padding-right: 2em;
+	text-align: left;
+}
+input {
+}
+.siteform__btn {
+	background-color: transparent;
+	border: none;
+	color: rgba(0, 139, 139, 0.842);
+	font-size: large;
+	font-family: 'Questrial', sans-serif;
+	padding-top: 2em;
+	font-weight: bold;
+}

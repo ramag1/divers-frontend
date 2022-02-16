@@ -1,3 +1,4 @@
+import './SiteForm.css'
 
 function SiteForm({handleSubmit, site, handleChange,}) {
 //deconstructed props from CreateSite
@@ -5,7 +6,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 	return (
 		<div className='siteform__div'>
 			<form onSubmit={handleSubmit}>
-				<div className='siteform__name'>
+				<div className='siteform__field'>
 					<label>Name</label>
 					<input
 						required
@@ -15,7 +16,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 						onChange={handleChange}
 					/>
 				</div>
-				<div className='siteform__country'>
+				<div className='siteform__field'>
 					<label>Country</label>
 					<input
 						required
@@ -25,8 +26,8 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 						name='country'
 					/>
 				</div>
-				<div className='siteform__maxdepth'>
-					<label>Maximum Depth in Meters</label>
+				<div className='siteform__field'>
+					<label>Max Depth in Meters</label>
 					<input
 						required
 						type='number'
@@ -35,7 +36,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 						name='max_depth'
 					/>
 				</div>
-				<div className='siteform__site_type'>
+				<div className='siteform__field'>
 					<label>Site Type</label>
 					<input
 						required
@@ -45,7 +46,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 						name='site_type'
 					/>
 				</div>
-				<div className='marine_life'>
+				<div className='siteform__field'>
 					<label>Notable Marine Life</label>
 					<input
 						required

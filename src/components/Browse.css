@@ -14,9 +14,10 @@ a {
 }
 .browse__ul {
     overflow-y: scroll;
+    text-align: left;
     list-style-type: none;
-    margin-right: 1em;
-    margin-left:1em;
+    margin-right: 2em;
+    margin-left:2em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
     background: rgba(245, 245, 245, 0.521);

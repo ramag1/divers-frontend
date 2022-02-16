@@ -1,4 +1,4 @@
-.signup__div {
+.siteform__div {
     background: rgba(245, 245, 245, 0.616);
     height: 50vh;
     width: 60vw;
@@ -11,7 +11,7 @@ h2 {
     padding-top: 1em;
     /* margin: auto; */
 }
-.signup__form {
+.siteform__form {
     /* margin: auto; */
     padding-top: 1em;
     grid-column: 2;
@@ -20,9 +20,9 @@ h2 {
     flex-direction: column;
 }
 
-.signup__field {
+.siteform__field {
     padding: .5em;
-    justify-items: flex-start;
+    align-items:center;
 }
 
 label {
@@ -30,9 +30,9 @@ label {
     text-align: left;
 }
 input {
-
+    font-family: 'Questrial', sans-serif;
 }
-.signup__btn {
+.siteform__btn {
     background-color: transparent;
     border: none;
     color: rgba(0, 139, 139, 0.842);
