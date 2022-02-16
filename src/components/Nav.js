@@ -7,8 +7,7 @@ import { MdClose } from 'react-icons/md';
 import './Nav.css'
 
 function Nav(props) {
-	
-	const {handleLogout} = useContext(UserContext);
+	const { handleLogout, userInfo, loggedIn } = useContext(UserContext);
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
 	const handleToggle = () => {
@@ -18,78 +17,66 @@ function Nav(props) {
 		setNavbarOpen(false);
 	};
 
-
-    return (
-			<nav className='nav__container'>
-				<nav className='app__nav'>
-					<h1>Divers Discovery</h1>
-					<ul>
-						<li>
-							<Link to='/login'>Log In</Link>
-						</li>
-						<li>
-							<Link to='/signup'>Sign Up</Link>
-						</li>
-						<li>
-							<Link to='/' onClick={handleLogout}>
-								Log Out
-							</Link>
-						</li>
-					</ul>
-				</nav>
-				<nav className='nav__hamburger'>
-					<button className='navbar__button' onClick={handleToggle}>
-						{navbarOpen ? (
-							<MdClose
-								style={{ color: '#fff', width: '40px', height: '20px ' }}
-							/>
-						) : (
-							<FiMenu
-								style={{ color: '#383838', width: '40px', height: '20px' }}
-							/>
-						)}
-					</button>
-					<ul className={`menuNav ${navbarOpen ? ' showMenu' : ''}`}>
-						<li>
-							<Link
-								to='/'
-								activeClassName='active-link'
-								onClick={() => closeMenu()}
-								exact>
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link
-								to='/browsesites'
-								activeClassName='active-link'
-								onClick={() => closeMenu()}
-								exact>
-								Browse Sites
-							</Link>
-						</li>
-						<li>
-							<Link
-								to='/mysites/'
-								activeClassName='active-link'
-								onClick={() => closeMenu()}
-								exact>
-								My Sites
-							</Link>
-						</li>
-						<li>
-							<Link
-								to='/conservation'
-								activeClassName='active-link'
-								onClick={() => closeMenu()}
-								exact>
-								Conservation
-							</Link>
-						</li>
-					</ul>
-				</nav>
+	//reference https://ibaslogic.com/how-to-add-hamburger-menu-in-react/ for hamburger menu creation
+	return (
+		<nav className='nav__container'>
+			<h1 className='nav__h1'>Divers Discovery</h1>
+			<nav className='nav__hamburger'>
+				<button className='nav__button' onClick={handleToggle}>
+					{navbarOpen ? (
+						<MdClose
+							style={{ color: '#fff', width: '40px', height: '40px ' }}
+						/>
+					) : (
+						<FiMenu style={{ color: '#fff', width: '40px', height: '40px' }} />
+					)}
+				</button>
+				<ul className={`nav__menuNav ${navbarOpen ? ' nav__showMenu' : ''}`}>
+					<li>
+						<Link to='/' onClick={() => closeMenu()} exact>
+							Home
+						</Link>
+					</li>
+					<li>
+						<Link to='/browsesites' onClick={() => closeMenu()} exact>
+							Browse Sites
+						</Link>
+					</li>
+					<li>
+						<Link to='/mysites/' onClick={() => closeMenu()} exact>
+							My Sites
+						</Link>
+					</li>
+					<li>
+						<Link to='/conservation' onClick={() => closeMenu()} exact>
+							Conservation
+						</Link>
+					</li>
+					<br />
+					<br />
+					<br />
+					<li>
+						<Link to='/login'>
+							{/* {loggedIn ? `Welcome, ${userInfo.username}` : 'Log In'} */}
+							Log In
+						</Link>
+					</li>
+					<li>
+						<Link to='/signup'>
+							{/* {loggedIn ? '' : 'Sign Up'} */}
+							Sign Up
+						</Link>
+					</li>
+					<li>
+						<Link to='/' onClick={handleLogout}>
+							{/* {loggedIn ? 'Log Out' : ''} */}
+							Log Out
+						</Link>
+					</li>
+				</ul>
 			</nav>
-		);
+		</nav>
+	);
 }
 
 export default Nav;

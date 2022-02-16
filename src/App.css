@@ -3,11 +3,11 @@
 }
 body {
   font-family: 'Questrial', sans-serif;
-  /* background-image: url('./background1.png');
+  background-image: url('./background2.png');
   color: antiquewhite;
-  background-size: 100%;
-  background-repeat: no-repeat; */
-  /* background-color: rgba(3, 3, 3, 0.993); */
+  background-position: cover;
+  background-repeat: no-repeat;
+
 }
 a {
 

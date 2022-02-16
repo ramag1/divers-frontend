@@ -1,49 +1,59 @@
-
-.navBar {
-  position: relative;
+.nav__container {
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    grid-template-rows: 1fr;
 }
 
-.navBar button {
-  position: absolute;
+.nav__h1{
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 2em;
+}
 
+ .nav__hamburger {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.nav__button {
+  position: absolute;
   right: 20px;
-  z-index: 10;
   cursor: pointer;
   background: transparent;
-  border: none
+  border: none;
+  z-index: 10;
 }
 
-.menuNav {
+.nav__menuNav {
   overflow-y: scroll;
   list-style: none;
   position: fixed;
-  margin-top: 0px;
+  margin-top: 0em;
+  word-wrap: normal;
   top: 0;
-  background: rgba(0, 139, 139, 0.089);
+  background: rgba(0, 139, 139, 0.295);
   right: 0;
   bottom: 0;
-  height: 100vh;
-  width: 0;
+  height: 0vh;
   overflow: hidden;
-  max-width: 200px;
-  z-index: 9;
+  max-width: 150px;
+
 }
 
-.menuNav.showMenu {
+.nav__menuNav.nav__showMenu {
   height: 100vh;
   width: 30%;
-
 }
 
 a {
+margin-left: 0em;
   display: block;
-  padding: 10px 40px;
+  padding: 10px 5px;
   text-decoration: none;
-  color: #084132;
+  color: antiquewhite;
   font-weight: bold;
-
 }
 
-.menuNav li:first-child {
+.nav__menuNav li:first-child {
   margin-top: 7rem;
 }
