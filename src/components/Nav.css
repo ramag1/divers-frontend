@@ -2,20 +2,24 @@
     display: grid;
     grid-template-columns: 1fr .5fr;
     grid-template-rows: 1fr;
+    color: rgba(0, 139, 139, 0.842);
 }
 
 .nav__h1{
     grid-row: 1;
     grid-column: 1;
     font-size: 2em;
+    font-family: 'Syncopate', sans-serif;
 }
 
  .nav__hamburger {
     grid-row: 1;
     grid-column: 2;
+    
 }
 
 .nav__button {
+  color: #008b8b;
   position: absolute;
   right: 20px;
   cursor: pointer;
@@ -26,12 +30,13 @@
 
 .nav__menuNav {
   overflow-y: scroll;
+  text-align: left;
   list-style: none;
   position: fixed;
   margin-top: 0em;
   word-wrap: normal;
   top: 0;
-  background: rgba(0, 139, 139, 0.295);
+  background: rgba(245, 245, 245, 0.808);
   right: 0;
   bottom: 0;
   height: 0vh;
@@ -43,17 +48,29 @@
 .nav__menuNav.nav__showMenu {
   height: 100vh;
   width: 30%;
+  color: rgba(0, 139, 139, 0.842);  
 }
 
 a {
-margin-left: 0em;
+  margin-left: 0em;
   display: block;
   padding: 10px 5px;
   text-decoration: none;
-  color: antiquewhite;
+  color: rgba(0, 139, 139, 0.842);
   font-weight: bold;
 }
 
 .nav__menuNav li:first-child {
   margin-top: 7rem;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+  .nav__h1{
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 2em;
+    font-family: 'Syncopate', sans-serif;
+}
 }

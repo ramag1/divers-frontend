@@ -1,0 +1,42 @@
+.signup__div {
+    background: rgba(245, 245, 245, 0.616);
+    height: 50vh;
+    width: 60vw;
+    margin: auto;
+    border-radius: 10%;
+    border: 2px whitesmoke solid;
+    color: rgba(0, 139, 139, 0.842);
+}
+h2 {
+    padding-top: 1em;
+    /* margin: auto; */
+}
+.signup__form {
+    /* margin: auto; */
+    padding-top: 1em;
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup__field {
+    padding: .5em;
+    justify-items: flex-start;
+}
+
+label {
+    padding-right: 2em;
+    text-align: left;
+}
+input {
+
+}
+.signup__btn {
+    background-color: transparent;
+    border: none;
+    color:whitesmoke;
+    font-size: large;
+    font-family: 'Questrial', sans-serif;
+    padding-top:2em;
+}

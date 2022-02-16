@@ -79,7 +79,7 @@ function App() {
 	}, [loggedIn]);
 
 	return (
-		<div>
+		<div className='app__container'>
 			<UserContext.Provider
 				value={{ loggedIn, handleLogout, userInfo, handleSetLoggedIn }}>
 				<Nav />

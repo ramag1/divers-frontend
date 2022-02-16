@@ -1,4 +1,4 @@
-.App {
+.app__container{
   text-align: center;
 }
 body {
@@ -7,12 +7,4 @@ body {
   color: antiquewhite;
   background-position: cover;
   background-repeat: no-repeat;
-
-}
-a {
-
-}
-h1 {
-  font-family: 'Syncopate', sans-serif;
-
 }

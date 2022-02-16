@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API_URL from '../apiConfig';
+import './Signup.css'
 
 function Signup () {
 
@@ -57,7 +58,7 @@ function Signup () {
 		<div className='signup__div'>
 			<h2>Create an account</h2>
 			<form className='signup__form' onSubmit={_handleSignup}>
-				<div className='signup__username'>
+				<div className='signup__field'>
 					<label>Username</label>
 					<input
 						required
@@ -69,7 +70,7 @@ function Signup () {
 						onChange={handleChange}
 					/>
 				</div>
-				<div className='signup__email'>
+				<div className='signup__field'>
 					<label>Email</label>
 					<input
 						required
@@ -81,7 +82,7 @@ function Signup () {
 						onChange={handleChange}
 					/>
 				</div>
-				<div className='signup__password'>
+				<div className='signup__field'>
 					<label>Password</label>
 					<input
 						required
@@ -92,7 +93,7 @@ function Signup () {
 						onChange={handleChange}
 					/>
 				</div>
-				<div className='signup__password2'>
+				<div className='signup__field'>
 					<label>Confirm Password</label>
 					<input
 						required
