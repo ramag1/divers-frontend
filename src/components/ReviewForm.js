@@ -1,3 +1,4 @@
+import { Navigate } from 'react-router-dom';
 import './ReviewForm.css'
 
 function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
@@ -90,9 +91,14 @@ function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
 					</div>
 					<button className='reviewform__btn' type='submit'>
 						Submit Changes
-					</button> <br/>
+					</button>
+					<br />
 					<button className='reviewform__btn' onClick={handleDelete}>
 						Remove Site
+					</button> 
+                    <br/>
+					<button className='reviewform__btn' onClick={<Navigate to= '/mysites'/>}>
+						Cancel
 					</button>
 				</form>
 			</div>

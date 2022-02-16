@@ -1,9 +1,11 @@
+
+
 .app__container{
   text-align: center;
 }
 body {
   font-family: 'Questrial', sans-serif;
-  background-image: url('./background2.png');
+  background-image: url('./background3.jpeg');
   color: antiquewhite;
   background-position: cover;
   background-repeat: no-repeat;
@@ -11,4 +13,14 @@ body {
 
 input {
     font-family: 'Questrial', sans-serif;
+}
+
+@media only screen and (max-width: 500px) {
+
+body{
+  background-image: url('./background-mobile.jpeg');
+  color: antiquewhite;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 }
