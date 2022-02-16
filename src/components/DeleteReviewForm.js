@@ -1,7 +1,7 @@
-import './ReviewForm.css'
+import './ReviewForm.css';
 
-function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
-    //deconstructed props from SiteReview
+function ReviewForm({ handleSubmit, formData, handleChange }) {
+	//deconstructed props from SiteReview
 
 	return (
 		<div className='reviewform__container'>
@@ -89,10 +89,7 @@ function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
 						/>
 					</div>
 					<button className='reviewform__btn' type='submit'>
-						Submit Changes
-					</button> <br/>
-					<button className='reviewform__btn' onClick={handleDelete}>
-						Remove Site
+						Delete This Entry
 					</button>
 				</form>
 			</div>

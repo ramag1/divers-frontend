@@ -1,4 +1,4 @@
-import { useState,  useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import API_URL from '../apiConfig';
 import ReviewForm from './ReviewForm';
@@ -7,7 +7,7 @@ import { UserContext } from '../userContext';
 function ReviewEdit(props) {
 	const { userInfo } = useContext(UserContext);
 	const { id, name, revId } = useParams();
-    //shorthand Navigate here
+	//shorthand Navigate here
 	let navigate = useNavigate();
 	const initialState = {
 		visited: false,
@@ -17,19 +17,18 @@ function ReviewEdit(props) {
 	};
 	const [formData, setFormData] = useState(initialState);
 
-
 	function handleChange(event) {
 		setFormData({ ...formData, [event.target.name]: event.target.value });
 	}
 	//reference class code from authentication lecture
-	async function handleSubmit(event) {
+	async function handleDelete(event) {
 		event.preventDefault();
-		const data = { ...formData, site_id: id, site_name: name , id: revId};
+		const data = { ...formData, site_id: id, site_name: name, id: revId };
 		console.log(data);
 
 		try {
 			const response = await fetch(API_URL + `api/reviews/${revId}`, {
-				method: 'PUT',
+				method: 'DELETE',
 				headers: {
 					Authorization: `Token ${localStorage.getItem('token')}`,
 					'Content-Type': 'application/json',
@@ -37,35 +36,13 @@ function ReviewEdit(props) {
 				body: JSON.stringify(data),
 			});
 			console.log(response);
-			if (response.status === 200) {
+			if (response.status === 204) {
 				const data = await response.json();
 				console.log(data);
 				navigate(`/mysites`);
 			}
 		} catch (error) {}
 	}
-    async function handleDelete(event) {
-            event.preventDefault();
-            const data = { ...formData, site_id: id, site_name: name, id: revId };
-            console.log(data);
-
-            try {
-                const response = await fetch(API_URL + `api/reviews/${revId}`, {
-                    method: 'DELETE',
-                    headers: {
-                        Authorization: `Token ${localStorage.getItem('token')}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-                console.log(response);
-                if (response.status === 204) {
-                    const data = await response.json();
-                    console.log(data);
-                    navigate(`/mysites`);
-                }
-            } catch (error) {}
-        }
 
 	if (!userInfo) {
 		return (
@@ -77,12 +54,12 @@ function ReviewEdit(props) {
 
 	return (
 		<div>
-            <h2>Edit your review for {name}:</h2>
-			<ReviewForm
-				handleSubmit={handleSubmit}
+			<h2>Delete your review for {name}:</h2>
+			<DeleteReviewForm
+				handleSubmit={handleDelete}
 				handleChange={handleChange}
-                handleDelete={handleDelete}
 				formData={formData}
+    
 			/>
 		</div>
 	);
