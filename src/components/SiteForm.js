@@ -12,7 +12,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 						required
 						type='text'
 						name='name'
-						value={site.name}
+						defaultValue={site.name}
 						onChange={handleChange}
 					/>
 				</div>
@@ -21,7 +21,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 					<input
 						required
 						type='text'
-						value={site.country}
+						defaultValue={site.country}
 						onChange={handleChange}
 						name='country'
 					/>
@@ -31,7 +31,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 					<input
 						required
 						type='number'
-						value={site.max_depth}
+						defaultValue={site.max_depth}
 						onChange={handleChange}
 						name='max_depth'
 					/>
@@ -41,7 +41,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 					<input
 						required
 						type='text'
-						value={site.site_type}
+						defaultValue={site.site_type}
 						onChange={handleChange}
 						name='site_type'
 					/>
@@ -51,7 +51,7 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 					<input
 						required
 						type='text'
-						value={site.marine_life}
+						defaultValue={site.marine_life}
 						onChange={handleChange}
 						name='marine_life'
 					/>

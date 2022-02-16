@@ -1,11 +1,9 @@
-import React from 'react';
 import {useState, useEffect} from 'react'
-import {Link, useParams} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 function Browse(props) {
 	const [sites, setSites] = useState([]);
-    // const {id} = useParams();
 
 	useEffect(() => {
 		axios(`http://localhost:8000/api/sites/`)

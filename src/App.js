@@ -1,28 +1,28 @@
-import './App.css';
 import {Route,Routes, useNavigate} from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import { UserContext } from './userContext';
-import Home from './components/Home';
-import Nav from './components/Nav';
-import MySites from './components/MySites';
-import Conservation from './components/Conservation'
+import './App.css';
 import Browse from './components/Browse'
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Conservation from './components/Conservation'
 import CreateSite from './components/CreateSite';
+import Login from './components/Login';
+import Home from './components/Home';
+import MySites from './components/MySites';
+import Nav from './components/Nav';
+import ReviewEdit from './components/ReviewEdit';
+import Signup from './components/Signup';
 import SiteDetail from './components/SiteDetail';
 import SiteReview from './components/SiteReview';
-import ReviewEdit from './components/ReviewEdit';
-
 import API_URL from './apiConfig';
 
 function App() {
-	// If there is already a token in local storage, set logged in to true, else set it to false
+
+  //reference user log in authentication lecture
 	const [loggedIn, setLoggedIn] = useState(
 		localStorage.getItem('token') ? true : false
-	);
+	); //ternary to check for stored token as logged in
 	const [userInfo, setUserInfo] = useState(null);
-	let navigate = useNavigate();
+	let navigate = useNavigate(); //shorthand call for navigate
 
 	const handleSetLoggedIn = (token) => {
 		localStorage.setItem('token', token);
@@ -52,7 +52,7 @@ function App() {
 	};
 
 	const handleLogout = async () => {
-		// make a request to /token/logout to destroy the token
+		// request here to remove the token from local storage and log out
 		try {
 			const response = await fetch(API_URL + 'token/logout/', {
 				method: 'POST',
@@ -62,23 +62,17 @@ function App() {
 					Authorization: `Token ${localStorage.getItem('token')}`,
 				},
 			});
-			// destroy token was successful
 			if (response.status === 204) {
-				setUserInfo(null);
-				setLoggedIn(false);
-				localStorage.clear();
-				navigate('/login');
+				setUserInfo(null); 		// set user back to null
+				setLoggedIn(false);	// clear logged in state
+				localStorage.clear();	// clear the token out of the local storage
+				navigate('/login');	// redirect the user back to log in page
 			}
 		} catch (error) {}
-		// clear the token out of the local storage
-		// redirect the user back to log in page
-		// clear logged in state
-		// set user back to null
 		return;
 	};
 
 	useEffect(() => {
-		// if logged in is true on application load, get logged in user's info
 		if (loggedIn) {
 			getUserInfo();
 		}

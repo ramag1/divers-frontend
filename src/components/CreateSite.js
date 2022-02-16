@@ -6,22 +6,24 @@ import { UserContext } from '../userContext';
 
 
 const CreateSite = () => {
-	const {loggedIn} = useContext(UserContext)
+	const { loggedIn } = useContext(UserContext);
 	const initialSiteData = {
 		name: '',
 		country: '',
 		max_depth: '',
 		site_type: '',
-		marine_life:'',
+		marine_life: '',
 	};
 	const navigate = useNavigate();
 	const [newsite, setNewsite] = useState(initialSiteData);
+
+	//pull in 
 	const handleChange = (event) => {
 		setNewsite((prevState) => {
 			return { ...prevState, [event.target.id]: event.target.value };
 		});
 	};
-
+	//reference class code from authentication lecture
 	const createsite = async (event) => {
 		event.preventDefault();
 		const data = new FormData(event.target);
@@ -34,11 +36,8 @@ const CreateSite = () => {
 				},
 				body: data,
 			});
-			// status 201 === success
 			if (response.status === 201) {
-				// console.log(response);
 				const data = await response.json();
-				// console.log(data);
 				navigate(`/site/${data.id}`);
 			}
 		} catch (error) {}
