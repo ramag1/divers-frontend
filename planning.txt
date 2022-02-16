@@ -3,11 +3,13 @@ Diving Tracker & Information app which will featured a browsable catalog of glob
 
 PROCESS & PLANNING:
 Build out user facing components
+    Create Site and Create Review will have createforms as children
 Authenticate users/login/signup/logout
 UseContext to pass user information state allowing for filtered API responses
 Ensure routes close the loop on user experience:
     Route user to all of their reviews if they post new review on existing site
     Route user to all sites posted if they post new site
     Route user to updated review upon edit/put action
+
 Add form components and API interaction for CRUD functionality on 2 models: Review and Site
     Leverage and repurpose form component skeleton for Review Edit and Create components

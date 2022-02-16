@@ -5,8 +5,8 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 	return (
 		<div className='reviewform__div'>
 			<form onSubmit={handleSubmit}>
-				<div className='reviewform__visited'>
-					Visited this site?
+				<div className='reviewform__field'>
+					Visited this site? <br />
 					<input
 						autoFocus
 						name='visited'
@@ -28,8 +28,8 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 					/>
 					<label>No</label>
 				</div>
-				<div className='reviewform__favorite'>
-					Add to Favorites?
+				<div className='reviewform__field'>
+					Add to Favorites? <br />
 					<input
 						autoFocus
 						name='favorite'
@@ -51,8 +51,8 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 					/>
 					<label>No</label>
 				</div>
-				<div className='reviewform__bucket_list'>
-					Do you want to Bucket List this site?
+				<div className='reviewform__field'>
+					Add to Bucket List? <br />
 					<input
 						autoFocus
 						name='bucket_list'
@@ -74,7 +74,7 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 					/>
 					<label>No</label>
 				</div>
-				<div className='reviewform__comments'>
+				<div className='reviewform__field'>
 					<label>Comments on this site: </label>
 					<input
 						as='textarea'

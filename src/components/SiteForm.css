@@ -1,4 +1,4 @@
-.siteform__div {
+.reviewform__div {
 	margin-top: 40px;
 	background: rgba(245, 245, 245, 0.521);
 	height: 50vh;
@@ -12,7 +12,7 @@ h2 {
 	padding-top: 1em;
 }
 
-.siteform__field {
+.reviewform__field {
 	padding: 0.5em;
 	justify-items: flex-start;
 }
@@ -23,7 +23,7 @@ label {
 }
 input {
 }
-.siteform__btn {
+.reviewform__btn {
 	background-color: transparent;
 	border: none;
 	color: rgba(0, 139, 139, 0.842);
