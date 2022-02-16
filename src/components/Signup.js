@@ -1,26 +1,28 @@
-import { useEffect, useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import API_URL from '../apiConfig';
 
-const Signup = () => {
+function Signup () {
+
 	const initialFormData = {
 		email: '',
 		username: '',
 		password: '',
 		re_password: '',
 	};
-
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState(initialFormData);
 	const [error, setError] = useState(false);
 	const [success, setSuccess] = useState(false);
+
+	//pull in initial data as a copy and add the event target values for each input
 	const handleChange = (event) => {
 		setFormData((prevState) => {
 			return { ...prevState, [event.target.name]: event.target.value };
 		});
 	};
 
+	//reference class code from authentication lecture
 	const _handleSignup = async (event) => {
 		event.preventDefault();
 		console.log(formData);
@@ -34,7 +36,6 @@ const Signup = () => {
 			});
 			console.log(response);
 			if (response.status === 201) {
-				// 201 status === success
 				setSuccess(true);
 				setTimeout(() => {
 					navigate('/login');
@@ -43,6 +44,7 @@ const Signup = () => {
 		} catch (error) {}
 	};
 
+	//call as an onBlur event in return
 	const handlePasswordMatch = (event) => {
 		if (formData.password !== formData.re_password) {
 			setError(true);
@@ -52,12 +54,12 @@ const Signup = () => {
 	};
 
 	return (
-		<div className='w-75 p-3'>
+		<div className='signup__div'>
 			<h2>Create an account</h2>
-			<Form onSubmit={_handleSignup}>
-				<Form.Group controlId='username'>
-					<Form.Label>Username</Form.Label>
-					<Form.Control
+			<form className='signup__form' onSubmit={_handleSignup}>
+				<div className='signup__username'>
+					<label>Username</label>
+					<input
 						required
 						autoFocus
 						type='text'
@@ -65,10 +67,10 @@ const Signup = () => {
 						value={formData.username}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='formBasicEmail'>
-					<Form.Label>Email</Form.Label>
-					<Form.Control
+				</div>
+				<div className='signup__email'>
+					<label>Email</label>
+					<input
 						required
 						autoFocus
 						type='email'
@@ -76,43 +78,30 @@ const Signup = () => {
 						name='email'
 						onChange={handleChange}
 					/>
-					<Form.Control.Feedback type='invalid'>
-						Please provide a valid email .
-					</Form.Control.Feedback>
-				</Form.Group>
-				<Form.Group controlId='password'>
-					<Form.Label>Password</Form.Label>
-					<Form.Control
+				</div>
+				<div className='signup__password'>
+					<label>Password</label>
+					<input
 						required
 						type='password'
 						name='password'
 						value={formData.password}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='re_password'>
-					<Form.Label>Confirm Password</Form.Label>
-					<Form.Control
+				</div>
+				<div className='signup__password2'>
+					<label>Confirm Password</label>
+					<input
 						required
 						type='password'
 						name='re_password'
 						value={formData.re_password}
 						onChange={handleChange}
-						onBlur={handlePasswordMatch}
+						onBlur={handlePasswordMatch} // as we are clicking on the submit button, thus taking the focus off the re-enter password field. onBlur allows comparison of completed field we just clicked off of against the initial password field
 					/>
-				</Form.Group>
-				<Button type='submit' disabled={error}>
-					Sign up
-				</Button>
-				{error && <Alert variant='danger'>Passwords must match!</Alert>}
-				{success && (
-					<Alert variant='success' className='mt-5'>
-						User successfully created! You will be redirected to log in. If you
-						are not automatically redirected, please click{' '}
-						{<Link to='/login'>here</Link>}.
-					</Alert>
-				)}
-			</Form>
+				</div>
+				<button className='signup__btn' type='submit'>Sign up</button>
+			</form>
 		</div>
 	);
 };

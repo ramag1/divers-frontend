@@ -1,4 +1,3 @@
-import React from 'react'
 
 function SiteForm({handleSubmit, site, handleChange,}) {
 //deconstructed props from CreateSite

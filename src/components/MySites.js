@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { useState, useEffect } from 'react';
-import { Link, useParams , Navigate} from 'react-router-dom';
+import { Link, Navigate} from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../userContext';
 
 
 function MySites(props) {
+
 	const [mySites, setMySites] = useState([]);
-	// const {id} = useParams();
 	const {userInfo} = useContext(UserContext);
 	// console.log(userInfo)
 
@@ -28,8 +28,6 @@ function MySites(props) {
 	if (!mySites.length) {
 		return <p>Loading...</p>;
 	}
-
-
 
 	return (
 		<div className='App'>

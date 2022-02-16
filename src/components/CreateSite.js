@@ -1,11 +1,12 @@
 import { useState, useContext } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-import SiteForm from './SiteForm';
 import API_URL from '../apiConfig';
 import { UserContext } from '../userContext';
+import SiteForm from './SiteForm';
 
 
-const CreateSite = () => {
+function CreateSite () {
+
 	const { loggedIn } = useContext(UserContext);
 	const initialSiteData = {
 		name: '',
@@ -17,12 +18,13 @@ const CreateSite = () => {
 	const navigate = useNavigate();
 	const [newsite, setNewsite] = useState(initialSiteData);
 
-	//pull in 
+	//pull in initial data as a copy and add the event target values for each input
 	const handleChange = (event) => {
 		setNewsite((prevState) => {
 			return { ...prevState, [event.target.id]: event.target.value };
 		});
 	};
+	
 	//reference class code from authentication lecture
 	const createsite = async (event) => {
 		event.preventDefault();

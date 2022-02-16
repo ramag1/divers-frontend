@@ -1,12 +1,11 @@
-import React from "react";
 
 function ReviewForm({ handleSubmit, formData, handleChange }) {
-    //deconstructed props being passed from SiteReview
+    //deconstructed props from SiteReview
 
 	return (
 		<div className='reviewform__div'>
 			<form onSubmit={handleSubmit}>
-				<div className='visited'>
+				<div className='reviewform__visited'>
 					Visited this site?
 					<input
 						autoFocus
@@ -29,7 +28,7 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 					/>
 					<label>No</label>
 				</div>
-				<div className='favorite'>
+				<div className='reviewform__favorite'>
 					Add to Favorites?
 					<input
 						autoFocus
@@ -52,7 +51,7 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 					/>
 					<label>No</label>
 				</div>
-				<div className='bucket_list'>
+				<div className='reviewform__bucket_list'>
 					Do you want to Bucket List this site?
 					<input
 						autoFocus
@@ -75,7 +74,7 @@ function ReviewForm({ handleSubmit, formData, handleChange }) {
 					/>
 					<label>No</label>
 				</div>
-				<div className='comments'>
+				<div className='reviewform__comments'>
 					<label>Comments on this site: </label>
 					<input
 						as='textarea'

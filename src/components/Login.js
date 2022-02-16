@@ -5,7 +5,7 @@ import API_URL from '../apiConfig';
 import { UserContext } from '../userContext';
 
 const Login = () => {
-	const {handleSetLoggedIn} = useContext(UserContext);
+	const { handleSetLoggedIn } = useContext(UserContext);
 	const initialFormData = {
 		email: '',
 		password: '',
@@ -19,6 +19,8 @@ const Login = () => {
 			return { ...prevState, [event.target.id]: event.target.value };
 		});
 	};
+
+	//reference class code from authentication lecture
 	const _handleLogin = async (event) => {
 		event.preventDefault();
 		// console.log(formData);
@@ -40,34 +42,28 @@ const Login = () => {
 	return (
 		<div>
 			<h2>Log in</h2>
-			<Form onSubmit={_handleLogin}>
-				<Form.Group controlId='email'>
-					<Form.Label>Email</Form.Label>
-					<Form.Control
+			<form className='login__form' onSubmit={_handleLogin}>
+				<div className='email'>
+					<label>Email</label>
+					<input
 						required
 						autoFocus
 						type='email'
-						value={formData.email}
+						defaultValue={formData.email}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Form.Group controlId='password'>
-					<Form.Label>Password</Form.Label>
-					<Form.Control
+				</div>
+				<div className='password'>
+					<label>Password</label>
+					<input
 						required
 						type='password'
-						value={formData.password}
+						defaultValue={formData.password}
 						onChange={handleChange}
 					/>
-				</Form.Group>
-				<Button type='submit'>Login</Button>
-			</Form>
-			{error && (
-				<Alert variant='warning' className='mt-4'>
-					No valid user found with the credentials entered. Please try logging
-					in again or <Link to='/signup'>sign up</Link> for an account.
-				</Alert>
-			)}
+				</div>
+				<button type='submit'>Login</button>
+			</form>
 		</div>
 	);
 };
