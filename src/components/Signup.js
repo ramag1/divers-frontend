@@ -39,7 +39,7 @@ function Signup () {
 				setSuccess(true);
 				setTimeout(() => {
 					navigate('/login');
-				}, 5000);
+				}, 1000);
 			}
 		} catch (error) {}
 	};
@@ -62,6 +62,7 @@ function Signup () {
 					<input
 						required
 						autoFocus
+						id='username'
 						type='text'
 						name='username'
 						value={formData.username}
@@ -73,6 +74,7 @@ function Signup () {
 					<input
 						required
 						autoFocus
+						id='email'
 						type='email'
 						value={formData.email}
 						name='email'
@@ -83,6 +85,7 @@ function Signup () {
 					<label>Password</label>
 					<input
 						required
+						id='password'
 						type='password'
 						name='password'
 						value={formData.password}
@@ -93,6 +96,7 @@ function Signup () {
 					<label>Confirm Password</label>
 					<input
 						required
+						id='re_password'
 						type='password'
 						name='re_password'
 						value={formData.re_password}

@@ -2,9 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {useState, useContext} from 'react'
 import { UserContext } from '../userContext';
+import { FiMenu } from 'react-icons/fi';
+import { MdClose } from 'react-icons/md';
 
 function Nav(props) {
+	
 	const {handleLogout} = useContext(UserContext);
+	const [navbarOpen, setNavbarOpen] = useState(false);
+
+	const handleToggle = () => {
+		setNavbarOpen(!navbarOpen);
+	};
+	const closeMenu = () => {
+		setNavbarOpen(false);
+	};
+
 
     return (
 			<nav className='nav__container'>
