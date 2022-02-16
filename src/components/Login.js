@@ -42,11 +42,13 @@ const Login = () => {
 	};
 	return (
 		<div className='login__container'>
+			<h2>Log in below:</h2>
 			<div className='login__div'>
-				<h2>Log in below:</h2>
 				<form className='login__form' onSubmit={_handleLogin}>
 					<div className='login__field'>
-						<label>Email</label>
+						<label>
+							Email <br />
+						</label>
 						<input
 							required
 							id='email'
@@ -56,7 +58,9 @@ const Login = () => {
 						/>
 					</div>
 					<div className='login__field'>
-						<label>Password</label>
+						<label>
+							Password <br/>
+						</label>
 						<input
 							required
 							id='password'
@@ -65,7 +69,9 @@ const Login = () => {
 							onChange={handleChange}
 						/>
 					</div>
-					<button className='login__btn' type='submit'>Login</button>
+					<button className='login__btn' type='submit'>
+						Login
+					</button>
 				</form>
 			</div>
 		</div>

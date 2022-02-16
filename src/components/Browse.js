@@ -19,8 +19,8 @@ function Browse(props) {
 
 	return (
         <div className='browse__container'>
+            <h2>Browse our Sites</h2>
             <div className='browse__div'>
-                <h2>Browse our Sites</h2>
                 <p>Don't see your favorite site? <Link to='/createsite'>Create one here!</Link></p>
                 <ul className='browse__ul'>
                     {sites.map((site) => (

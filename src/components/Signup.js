@@ -56,11 +56,13 @@ function Signup () {
 
 	return (
 		<div className='signup__container'>
+			<h2>Create an account</h2>
 			<div className='signup__div'>
-				<h2>Create an account</h2>
 				<form className='signup__form' onSubmit={_handleSignup}>
 					<div className='signup__field'>
-						<label>Username</label>
+						<label>
+							Username: <br />
+						</label>
 						<input
 							required
 							autoFocus
@@ -72,7 +74,9 @@ function Signup () {
 						/>
 					</div>
 					<div className='signup__field'>
-						<label>Email</label>
+						<label>
+							Email: <br />
+						</label>
 						<input
 							required
 							autoFocus
@@ -84,7 +88,9 @@ function Signup () {
 						/>
 					</div>
 					<div className='signup__field'>
-						<label>Password</label>
+						<label>
+							Password: <br />
+						</label>
 						<input
 							required
 							id='password'
@@ -95,7 +101,9 @@ function Signup () {
 						/>
 					</div>
 					<div className='signup__field'>
-						<label>Confirm Password</label>
+						<label>
+							Confirm Password: <br />
+						</label>
 						<input
 							required
 							id='re_password'
@@ -106,7 +114,9 @@ function Signup () {
 							onBlur={handlePasswordMatch} // as we are clicking on the submit button, thus taking the focus off the re-enter password field. onBlur allows comparison of completed field we just clicked off of against the initial password field
 						/>
 					</div>
-					<button className='signup__btn' type='submit'>Sign up</button>
+					<button className='signup__btn' type='submit'>
+						Sign up
+					</button>
 				</form>
 			</div>
 		</div>
