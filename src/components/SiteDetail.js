@@ -22,8 +22,8 @@ function SiteDetail(props) {
 
 	return (
 		<div className='sitedetail__container'>
-            <div className='sitedetail__div'>
                 <h2>Site Details</h2>
+            <div className='sitedetail__div'>
                 <p>{detail.name}</p>
                 <p>Located in {detail.country}</p>
                 <p>Maximum Depth is {detail.max_depth} meters</p>

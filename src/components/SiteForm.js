@@ -5,8 +5,8 @@ function SiteForm({handleSubmit, site, handleChange,}) {
 
 	return (
 		<div className='siteform__container'>
-			<div className='siteform__div'>
 				<h2>Create a site:</h2>
+			<div className='siteform__div'>
 				<form onSubmit={handleSubmit}>
 					<div className='siteform__field'>
 						<label>Name</label>
