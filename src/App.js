@@ -92,7 +92,7 @@ function App() {
 					<Route path='/createsite' element={<CreateSite />} />
 					<Route path='/mysites' element={<MySites />} />
 					<Route path='/site/:id/:name/createreview' element={<SiteReview />} />
-					<Route path='/site/:id/:name/review/edit' element={<ReviewEdit />} />
+					<Route path='/site/:id/:name/review/:revId/edit' element={<ReviewEdit />} />
 					<Route path='/conservation' element={<Conservation />} />
 				</Routes>
 			</UserContext.Provider>

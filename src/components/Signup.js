@@ -55,58 +55,60 @@ function Signup () {
 	};
 
 	return (
-		<div className='signup__div'>
-			<h2>Create an account</h2>
-			<form className='signup__form' onSubmit={_handleSignup}>
-				<div className='signup__field'>
-					<label>Username</label>
-					<input
-						required
-						autoFocus
-						id='username'
-						type='text'
-						name='username'
-						value={formData.username}
-						onChange={handleChange}
-					/>
-				</div>
-				<div className='signup__field'>
-					<label>Email</label>
-					<input
-						required
-						autoFocus
-						id='email'
-						type='email'
-						value={formData.email}
-						name='email'
-						onChange={handleChange}
-					/>
-				</div>
-				<div className='signup__field'>
-					<label>Password</label>
-					<input
-						required
-						id='password'
-						type='password'
-						name='password'
-						value={formData.password}
-						onChange={handleChange}
-					/>
-				</div>
-				<div className='signup__field'>
-					<label>Confirm Password</label>
-					<input
-						required
-						id='re_password'
-						type='password'
-						name='re_password'
-						value={formData.re_password}
-						onChange={handleChange}
-						onBlur={handlePasswordMatch} // as we are clicking on the submit button, thus taking the focus off the re-enter password field. onBlur allows comparison of completed field we just clicked off of against the initial password field
-					/>
-				</div>
-				<button className='signup__btn' type='submit'>Sign up</button>
-			</form>
+		<div className='signup__container'>
+			<div className='signup__div'>
+				<h2>Create an account</h2>
+				<form className='signup__form' onSubmit={_handleSignup}>
+					<div className='signup__field'>
+						<label>Username</label>
+						<input
+							required
+							autoFocus
+							id='username'
+							type='text'
+							name='username'
+							value={formData.username}
+							onChange={handleChange}
+						/>
+					</div>
+					<div className='signup__field'>
+						<label>Email</label>
+						<input
+							required
+							autoFocus
+							id='email'
+							type='email'
+							value={formData.email}
+							name='email'
+							onChange={handleChange}
+						/>
+					</div>
+					<div className='signup__field'>
+						<label>Password</label>
+						<input
+							required
+							id='password'
+							type='password'
+							name='password'
+							value={formData.password}
+							onChange={handleChange}
+						/>
+					</div>
+					<div className='signup__field'>
+						<label>Confirm Password</label>
+						<input
+							required
+							id='re_password'
+							type='password'
+							name='re_password'
+							value={formData.re_password}
+							onChange={handleChange}
+							onBlur={handlePasswordMatch} // as we are clicking on the submit button, thus taking the focus off the re-enter password field. onBlur allows comparison of completed field we just clicked off of against the initial password field
+						/>
+					</div>
+					<button className='signup__btn' type='submit'>Sign up</button>
+				</form>
+			</div>
 		</div>
 	);
 };

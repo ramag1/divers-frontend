@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SiteDetail.css'
+import API_URL from '../apiConfig';
 
 
 function SiteDetail(props) {
@@ -10,7 +11,7 @@ function SiteDetail(props) {
 	const { id } = useParams();
 
 	useEffect(() => {
-		axios(`http://localhost:8000/api/sites/${id}`)
+		axios(API_URL + `api/sites/${id}`)
 			.then((res) => setDetail(res.data))
 			.catch(console.error);
 	}, [] );
@@ -22,6 +23,7 @@ function SiteDetail(props) {
 	return (
 		<div className='sitedetail__container'>
             <div className='sitedetail__div'>
+                <h2>Site Details</h2>
                 <p>{detail.name}</p>
                 <p>Located in {detail.country}</p>
                 <p>Maximum Depth is {detail.max_depth} meters</p>

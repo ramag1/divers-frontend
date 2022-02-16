@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, Navigate} from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../userContext';
+import API_URL from '../apiConfig';
 import './MySites.css'
 
 
@@ -13,9 +14,9 @@ function MySites(props) {
 	// console.log(userInfo)
 
 	useEffect(() => {
-		axios(`http://localhost:8000/api/reviews/`)
+		axios(API_URL + `api/reviews/`)
 			.then((res) => setMySites(res.data))
-			.then (console.log(mySites))
+			.then(console.log(mySites))
 			.catch(console.error);
 	}, []);
 
@@ -44,7 +45,7 @@ function MySites(props) {
 					.map((visited) => (
 						<li key={visited.id}>
 							<Link
-								to={`/site/${visited.site_id}/${visited.site_name}/review/edit`}>
+								to={`/site/${visited.site_id}/${visited.site_name}/review/${visited.id}/edit`}>
 								{visited.site_name}
 							</Link>
 						</li>
@@ -61,7 +62,7 @@ function MySites(props) {
 					.map((favorite) => (
 						<li key={favorite.id}>
 							<Link
-								to={`/site/${favorite.site_id}/${favorite.site_name}/review/edit`}>
+								to={`/site/${favorite.site_id}/${favorite.site_name}/review/${favorite.id}/edit`}>
 								{favorite.site_name}
 							</Link>
 						</li>
@@ -78,7 +79,7 @@ function MySites(props) {
 					.map((bucket_list) => (
 						<li key={bucket_list.id}>
 							<Link
-								to={`/site/${bucket_list.site_id}/${bucket_list.site_name}/review/edit`}>
+								to={`/site/${bucket_list.site_id}/${bucket_list.site_name}/review/${bucket_list.id}/edit`}>
 								{bucket_list.site_name}
 							</Link>
 						</li>

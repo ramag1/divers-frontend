@@ -52,7 +52,6 @@ function CreateSite () {
 
 	return (
 		<div>
-			<h2>Add a site</h2>
 			<SiteForm
 				handleSubmit={createsite}
 				handleChange={handleChange}

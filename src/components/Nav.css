@@ -3,7 +3,22 @@
     grid-template-columns: 1fr .5fr;
     grid-template-rows: 1fr;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.808);
+    background: rgba(245, 245, 245, 0.75);
+}
+
+
+/* reference for CSS Animations https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .nav__h1{
@@ -11,8 +26,11 @@
     grid-column: 1;
     font-size: 2em;
     font-family: 'Syncopate', sans-serif;
-}
-
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+  }
  .nav__hamburger {
   grid-row: 1;
   grid-column: 2;
@@ -37,9 +55,8 @@
   position: fixed;
   margin-top: 0em;
   word-wrap: normal;
-  top: 0;
-  background: rgba(245, 245, 245, 0.808);
-  right: 0;
+  /* top: 0; */
+  background: rgba(245, 245, 245, 1);
   bottom: 0;
   height: 0vh;
   overflow: hidden;
@@ -50,7 +67,7 @@
 .nav__menuNav.nav__showMenu {
   height: 100vh;
   width: 30%;
-  color: rgba(0, 139, 139, 0.842);  
+  color: rgba(0, 139, 139, 0.75);  
 }
 
 a {
@@ -58,7 +75,7 @@ a {
   display: block;
   padding: 10px 5px;
   text-decoration: none;
-  color: rgba(0, 139, 139, 0.842);
+  color: rgba(0, 139, 139, 0.75);
   font-weight: bold;
 }
 

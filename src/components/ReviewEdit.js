@@ -6,7 +6,7 @@ import { UserContext } from '../userContext';
 
 function ReviewEdit(props) {
 	const { userInfo } = useContext(UserContext);
-	const { id, name } = useParams();
+	const { id, name, revId } = useParams();
     //shorthand Navigate here
 	let navigate = useNavigate();
 	const initialState = {
@@ -24,11 +24,11 @@ function ReviewEdit(props) {
 	//reference class code from authentication lecture
 	async function handleSubmit(event) {
 		event.preventDefault();
-		const data = { ...formData, site_id: id, site_name: name };
+		const data = { ...formData, site_id: id, site_name: name , id: revId};
 		console.log(data);
 
 		try {
-			const response = await fetch(API_URL + `api/reviews/${id}`, {
+			const response = await fetch(API_URL + `api/reviews/${revId}`, {
 				method: 'PUT',
 				headers: {
 					Authorization: `Token ${localStorage.getItem('token')}`,
@@ -55,7 +55,7 @@ function ReviewEdit(props) {
 
 	return (
 		<div>
-			<h2>Edit your review for {name}:</h2>
+            <h2>Edit your review for {name}:</h2>
 			<ReviewForm
 				handleSubmit={handleSubmit}
 				handleChange={handleChange}

@@ -16,7 +16,7 @@ h2 {
     margin-left:1em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.521);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 .mysites__favorites_div {
@@ -26,7 +26,7 @@ h2 {
     margin-left:1em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.521);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 .mysites__bucket_div {
@@ -36,7 +36,7 @@ h2 {
     margin-left:1em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.521);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 @media only screen and (max-width: 500px) {
@@ -60,7 +60,7 @@ h2 {
     margin-bottom:1em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.521);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 .mysites__favorites_div {
@@ -71,7 +71,7 @@ h2 {
     margin-bottom:1em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.521);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 .mysites__bucket_div {
@@ -82,7 +82,7 @@ h2 {
     margin-bottom:1em;
     border: 2px whitesmoke solid;
     color: rgba(0, 139, 139, 0.842);
-    background: rgba(245, 245, 245, 0.521);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 }

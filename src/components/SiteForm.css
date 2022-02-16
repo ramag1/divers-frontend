@@ -1,6 +1,9 @@
-.reviewform__div {
+.siteform__container {
+	margin-top: 4em;
+}
+.siteform__div {
 	margin-top: 40px;
-	background: rgba(245, 245, 245, 0.521);
+	background: rgba(245, 245, 245, 0.75);
 	height: 50vh;
 	width: 60vw;
 	margin: auto;
@@ -12,7 +15,7 @@ h2 {
 	padding-top: 1em;
 }
 
-.reviewform__field {
+.siteform__field {
 	padding: 0.5em;
 	justify-items: flex-start;
 }
@@ -23,7 +26,7 @@ label {
 }
 input {
 }
-.reviewform__btn {
+.siteform__btn {
 	background-color: transparent;
 	border: none;
 	color: rgba(0, 139, 139, 0.842);
@@ -31,4 +34,5 @@ input {
 	font-family: 'Questrial', sans-serif;
 	padding-top: 2em;
 	font-weight: bold;
+	text-decoration: underline;
 }

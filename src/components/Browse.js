@@ -2,12 +2,13 @@ import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './Browse.css'
+import API_URL from '../apiConfig';
 
 function Browse(props) {
 	const [sites, setSites] = useState([]);
 
 	useEffect(() => {
-		axios(`http://localhost:8000/api/sites/`)
+		axios(API_URL + `api/sites/`)
 			.then((res) => setSites(res.data))
 			.catch(console.error);
 	}, []);
@@ -18,12 +19,15 @@ function Browse(props) {
 
 	return (
         <div className='browse__container'>
-            <h2>Don't see a site? <Link to='/createsite'>Create one here!</Link></h2>
-            <ul className='browse__ul'>
-                {sites.map((site) => (
-                    <li key={site.id}><Link to={`/site/${site.id}`}>{site.name} - {site.country}</Link></li>
-                ))}
-            </ul>
+            <div className='browse__div'>
+                <h2>Browse our Sites</h2>
+                <p>Don't see your favorite site? <Link to='/createsite'>Create one here!</Link></p>
+                <ul className='browse__ul'>
+                    {sites.map((site) => (
+                        <li key={site.id}><Link to={`/site/${site.id}`}>{site.name} - {site.country}</Link></li>
+                    ))}
+                </ul>
+            </div>
         </div>
 	);
 }

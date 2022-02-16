@@ -41,31 +41,33 @@ const Login = () => {
 		} catch (error) {}
 	};
 	return (
-		<div className='login__div'>
-			<h2>Log in</h2>
-			<form className='login__form' onSubmit={_handleLogin}>
-				<div className='login__field'>
-					<label>Email</label>
-					<input
-						required
-						id='email'
-						type='email'
-						defaultValue={formData.email}
-						onChange={handleChange}
-					/>
-				</div>
-				<div className='login__field'>
-					<label>Password</label>
-					<input
-						required
-						id='password'
-						type='password'
-						defaultValue={formData.password}
-						onChange={handleChange}
-					/>
-				</div>
-				<button className='login__btn' type='submit'>Login</button>
-			</form>
+		<div className='login__container'>
+			<div className='login__div'>
+				<h2>Log in below:</h2>
+				<form className='login__form' onSubmit={_handleLogin}>
+					<div className='login__field'>
+						<label>Email</label>
+						<input
+							required
+							id='email'
+							type='email'
+							defaultValue={formData.email}
+							onChange={handleChange}
+						/>
+					</div>
+					<div className='login__field'>
+						<label>Password</label>
+						<input
+							required
+							id='password'
+							type='password'
+							defaultValue={formData.password}
+							onChange={handleChange}
+						/>
+					</div>
+					<button className='login__btn' type='submit'>Login</button>
+				</form>
+			</div>
 		</div>
 	);
 };

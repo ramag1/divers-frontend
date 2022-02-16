@@ -1,7 +1,10 @@
+.login__container {
+    margin-top: 4em;
+}
 .login__div {
     margin-top: 40px;
-    background: rgba(245, 245, 245, 0.521);
-    height: 50vh;
+    background: rgba(245, 245, 245, 0.75);
+    height: 40vh;
     width: 60vw;
     margin: auto;
     border-radius: 10%;
@@ -10,10 +13,10 @@
 }
 h2 {
     padding-top: 1em;
+    color: rgba(0, 139, 139, 0.842);
 
 }
 .login__form {
-
     padding-top: 1em;
     display: flex;
     flex-direction: column;
@@ -39,4 +42,5 @@ input {
     font-family: 'Questrial', sans-serif;
     padding-top:2em;
     font-weight: bold;
+    text-decoration: underline;
 }
