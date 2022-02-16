@@ -47,7 +47,7 @@ const Login = () => {
 					<label>Email</label>
 					<input
 						required
-						autoFocus
+						id='email'
 						type='email'
 						defaultValue={formData.email}
 						onChange={handleChange}
@@ -57,6 +57,7 @@ const Login = () => {
 					<label>Password</label>
 					<input
 						required
+						id='password'
 						type='password'
 						defaultValue={formData.password}
 						onChange={handleChange}
