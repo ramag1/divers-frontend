@@ -4,6 +4,7 @@ import {useState, useContext} from 'react'
 import { UserContext } from '../userContext';
 import { FiMenu } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
+import './Nav.css'
 
 function Nav(props) {
 	
@@ -37,18 +38,53 @@ function Nav(props) {
 					</ul>
 				</nav>
 				<nav className='nav__hamburger'>
-					<ul className='nav__ul'>
+					<button className='navbar__button' onClick={handleToggle}>
+						{navbarOpen ? (
+							<MdClose
+								style={{ color: '#fff', width: '40px', height: '20px ' }}
+							/>
+						) : (
+							<FiMenu
+								style={{ color: '#383838', width: '40px', height: '20px' }}
+							/>
+						)}
+					</button>
+					<ul className={`menuNav ${navbarOpen ? ' showMenu' : ''}`}>
 						<li>
-							<Link to='/'>Home</Link>
+							<Link
+								to='/'
+								activeClassName='active-link'
+								onClick={() => closeMenu()}
+								exact>
+								Home
+							</Link>
 						</li>
 						<li>
-							<Link to='/browsesites'>Browse Sites</Link>
+							<Link
+								to='/browsesites'
+								activeClassName='active-link'
+								onClick={() => closeMenu()}
+								exact>
+								Browse Sites
+							</Link>
 						</li>
 						<li>
-							<Link to='/mysites/'>My Sites</Link>
+							<Link
+								to='/mysites/'
+								activeClassName='active-link'
+								onClick={() => closeMenu()}
+								exact>
+								My Sites
+							</Link>
 						</li>
 						<li>
-							<Link to='/conservation'>Conservation</Link>
+							<Link
+								to='/conservation'
+								activeClassName='active-link'
+								onClick={() => closeMenu()}
+								exact>
+								Conservation
+							</Link>
 						</li>
 					</ul>
 				</nav>
