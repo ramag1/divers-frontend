@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import API_URL from '../apiConfig';
 import ReviewForm from './ReviewForm';
 import { UserContext } from '../userContext';
+import axios from 'axios';
 
 function ReviewEdit(props) {
 	const { userInfo } = useContext(UserContext);
@@ -39,26 +40,27 @@ function ReviewEdit(props) {
 			}
 		} catch (error) {}
 	}
-    async function handleDelete(event) {
-            event.preventDefault();
-            const data = { ...formData, site_id: id, site_name: name, id: revId };
 
-            try {
-                const response = await fetch(API_URL + `api/reviews/${revId}`, {
-                    method: 'DELETE',
-                    headers: {
-                        Authorization: `Token ${localStorage.getItem('token')}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-                console.log(response);
-                if (response.status === 204) {
-                    const data = await response.json();
-                    navigate(`/mysites`);
-                }
-            } catch (error) {}
-        }
+	async function handleDelete(event) {
+			event.preventDefault();
+			const data = { ...formData, site_id: id, site_name: name, id: revId };
+
+			try {
+				const response = await fetch(API_URL + `api/reviews/${revId}`, {
+					method: 'DELETE',
+					headers: {
+						Authorization: `Token ${localStorage.getItem('token')}`,
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(data),
+				});
+				console.log(response);
+				if (response.status === 204) {
+					// const data = await response.json();
+					navigate(`/mysites`);
+				}
+			} catch (error) {}
+		}
 
 	if (!userInfo) {
 		return (

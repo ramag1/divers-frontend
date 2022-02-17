@@ -90,7 +90,7 @@ function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
 						/>
 					</div>
 					<button className='reviewform__btn' type='submit'>
-						Submit Changes
+						Submit
 					</button>
 					<br />
 					<button className='reviewform__btn' onClick={handleDelete}>
