@@ -11,10 +11,13 @@ Link to the [tool](https://divers-discovery.netlify.app/).
 Click on the link to the tool and navigate in your browser window.
 
 
-## Wire Frames  
+## Wire Frames & Component Planning
+![Screen Shot 2022-02-16 at 7 51 15 PM](https://user-images.githubusercontent.com/93795090/154383242-5ea5a256-2ebe-417a-a085-c24e09bd75c5.png)
 
 
+![Screen Shot 2022-02-16 at 7 51 33 PM](https://user-images.githubusercontent.com/93795090/154383178-730d208e-e64e-4df2-8f77-775b152a8571.png)
 
+![Screen Shot 2022-02-16 at 7 51 40 PM](https://user-images.githubusercontent.com/93795090/154383188-e42238ee-64eb-4157-9a96-ffcd302e3a3b.png)
 
 
 ### MVP Goals
