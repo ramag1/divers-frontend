@@ -3,6 +3,8 @@ Divers Discovery - a browser-based, full stack tool coded in React using JavaScr
 
 Diving Tracker & Information app features a browsable catalog of global dive sites to add to your curated list of Visited sites, as well as a Bucket List of sites you wish to visit. Users can add their own dive sites if not visible in the seeded data.
 
+Leveraged new animated CSS technology/Key Frames and collapsable hamburger menu in navigation bar.
+
 
 Link to the [tool](https://divers-discovery.netlify.app/).
 
@@ -35,4 +37,3 @@ As a user, I would like to easily share the dive site with a friend via WhatsApp
 
 ## Open Issues & Challenges
 Working on implementing bootstrap to ensure a more streamlined UX across all components <br>
-
