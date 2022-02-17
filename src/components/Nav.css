@@ -25,6 +25,8 @@
   grid-row: 1;
   grid-column: 1;
   font-size: 2em;
+  margin-left: 0em;
+  padding-left: 0em;
   font-family: 'Syncopate', sans-serif;
   animation-duration: 3s;
   animation-name: slidein;

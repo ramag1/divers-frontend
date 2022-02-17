@@ -15,7 +15,6 @@ function MySites(props) {
 	useEffect(() => {
 		axios(API_URL + `api/reviews/`)
 			.then((res) => setMySites(res.data))
-			.then(console.log(mySites))
 			.catch(console.error);
 	}, []);
 

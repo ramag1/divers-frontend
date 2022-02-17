@@ -34,7 +34,6 @@ function SiteReview(props) {
 				},
 				body: JSON.stringify(data),
 			});
-			console.log(response);
 			if (response.status === 201) {
 				navigate(`/mysites`);
 			}
