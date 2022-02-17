@@ -4,7 +4,7 @@ import { UserContext } from './userContext';
 import './App.css';
 import Browse from './components/Browse'
 import Conservation from './components/Conservation'
-import CreateSite from './components/CreateSite';
+import SiteCreate from './components/SiteCreate';
 import Login from './components/Login';
 import Home from './components/Home';
 import MySites from './components/MySites';
@@ -89,7 +89,7 @@ function App() {
 					<Route path='/signup' element={<Signup />} />
 					<Route path='/browsesites' element={<Browse />} />
 					<Route path='/site/:id' element={<SiteDetail />} />
-					<Route path='/createsite' element={<CreateSite />} />
+					<Route path='/createsite' element={<SiteCreate />} />
 					<Route path='/mysites' element={<MySites />} />
 					<Route path='/site/:id/:name/createreview' element={<SiteReview />} />
 					<Route path='/site/:id/:name/review/:revId/edit' element={<ReviewEdit />} />

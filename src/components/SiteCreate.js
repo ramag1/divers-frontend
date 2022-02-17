@@ -5,7 +5,7 @@ import { UserContext } from '../userContext';
 import SiteForm from './SiteForm';
 
 
-function CreateSite () {
+function SiteCreate () {
 
 	const { loggedIn } = useContext(UserContext);
 	const initialSiteData = {
@@ -62,4 +62,4 @@ function CreateSite () {
 	);
 };
 
-export default CreateSite;
+export default SiteCreate;
