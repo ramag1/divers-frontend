@@ -17,7 +17,6 @@ function ReviewEdit(props) {
 	};
 	const [formData, setFormData] = useState(initialState);
 
-
 	function handleChange(event) {
 		setFormData({ ...formData, [event.target.name]: event.target.value });
 	}
@@ -25,7 +24,6 @@ function ReviewEdit(props) {
 	async function handleSubmit(event) {
 		event.preventDefault();
 		const data = { ...formData, site_id: id, site_name: name , id: revId};
-		console.log(data);
 
 		try {
 			const response = await fetch(API_URL + `api/reviews/${revId}`, {
@@ -36,10 +34,7 @@ function ReviewEdit(props) {
 				},
 				body: JSON.stringify(data),
 			});
-			console.log(response);
 			if (response.status === 200) {
-				const data = await response.json();
-				console.log(data);
 				navigate(`/mysites`);
 			}
 		} catch (error) {}
@@ -47,7 +42,6 @@ function ReviewEdit(props) {
     async function handleDelete(event) {
             event.preventDefault();
             const data = { ...formData, site_id: id, site_name: name, id: revId };
-            console.log(data);
 
             try {
                 const response = await fetch(API_URL + `api/reviews/${revId}`, {
@@ -61,7 +55,6 @@ function ReviewEdit(props) {
                 console.log(response);
                 if (response.status === 204) {
                     const data = await response.json();
-                    console.log(data);
                     navigate(`/mysites`);
                 }
             } catch (error) {}

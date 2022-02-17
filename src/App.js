@@ -63,7 +63,7 @@ function App() {
 				},
 			});
 			if (response.status === 204) {
-				setUserInfo(null); 		// set user back to null
+				setUserInfo(null); // set user back to null
 				setLoggedIn(false);	// clear logged in state
 				localStorage.clear();	// clear the token out of the local storage
 				navigate('/login');	// redirect the user back to log in page

@@ -1,11 +1,11 @@
 import './SiteForm.css'
 
-function SiteForm({handleSubmit, site, handleChange,}) {
+function SiteForm({handleSubmit, site, handleChange}) {
 //deconstructed props from CreateSite
 
 	return (
 		<div className='siteform__container'>
-				<h2>Create a site:</h2>
+			<h2>Create a site:</h2>
 			<div className='siteform__div'>
 				<form onSubmit={handleSubmit}>
 					<div className='siteform__field'>

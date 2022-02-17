@@ -6,16 +6,14 @@
 	height: 50vh;
 	width: 60vw;
 	margin: auto;
-	border-radius: 10%;
 	border: 2px whitesmoke solid;
 	color: rgba(0, 139, 139, 0.842);
 }
 h2 {
 	padding-top: 1em;
-	/* margin: auto; */
+
 }
 .signup__form {
-	/* margin: auto; */
 	padding-top: 1em;
 	grid-column: 2;
 	grid-row: 2;
@@ -47,14 +45,20 @@ input {
 }
 
 @media (max-width: 500px) {
-.signup__div { 
-  background: rgba(71, 71, 71, 0.75);
-  color: whitesmoke;
-  text-align: center;
-}
-
-.signup__btn {
+    .signup__container {
+        color: whitesmoke;
+    }
+    .signup__div { 
+    background: rgba(71, 71, 71, 0.75);
     color: whitesmoke;
-}
+    text-align: center;
+    }
+
+    label {
+        color: whitesmoke;
+    }
+    .signup__btn {
+        color: whitesmoke;
+    }
 
 }

@@ -7,7 +7,7 @@ import { MdClose } from 'react-icons/md';
 import './Nav.css'
 
 function Nav(props) {
-	const { handleLogout, userInfo, loggedIn } = useContext(UserContext);
+	const { handleLogout} = useContext(UserContext);
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
 	const handleToggle = () => {
@@ -59,19 +59,16 @@ function Nav(props) {
 					<br />
 					<li>
 						<Link to='/login'>
-							{/* {loggedIn ? `Welcome, ${userInfo.username}` : 'Log In'} */}
 							Log In
 						</Link>
 					</li>
 					<li>
 						<Link to='/signup'>
-							{/* {loggedIn ? '' : 'Sign Up'} */}
 							Sign Up
 						</Link>
 					</li>
 					<li>
 						<Link to='/' onClick={handleLogout}>
-							{/* {loggedIn ? 'Log Out' : ''} */}
 							Log Out
 						</Link>
 					</li>

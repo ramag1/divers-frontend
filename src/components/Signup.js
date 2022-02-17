@@ -26,7 +26,6 @@ function Signup () {
 	//reference class code from authentication lecture
 	const _handleSignup = async (event) => {
 		event.preventDefault();
-		console.log(formData);
 		try {
 			const response = await fetch(API_URL + 'users/', {
 				method: 'POST',
@@ -35,7 +34,6 @@ function Signup () {
 					'Content-Type': 'application/json',
 				},
 			});
-			console.log(response);
 			if (response.status === 201) {
 				setSuccess(true);
 				setTimeout(() => {

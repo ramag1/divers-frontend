@@ -25,7 +25,6 @@ function SiteReview(props) {
 	async function handleSubmit(event) {
 		event.preventDefault();
 		const data = { ...formData, site_id: id, site_name: name };
-		console.log(data);
 		try {
 			const response = await fetch(API_URL + `api/reviews/`, {
 				method: 'POST',
@@ -37,8 +36,6 @@ function SiteReview(props) {
 			});
 			console.log(response);
 			if (response.status === 201) {
-				const data = await response.json();
-				console.log(data);
 				navigate(`/mysites`);
 			}
 		} catch (error) {}

@@ -11,7 +11,6 @@ function MySites(props) {
 
 	const [mySites, setMySites] = useState([]);
 	const {userInfo} = useContext(UserContext);
-	// console.log(userInfo)
 
 	useEffect(() => {
 		axios(API_URL + `api/reviews/`)

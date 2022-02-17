@@ -37,12 +37,11 @@ input {
 	text-decoration: underline;
 }
 @media (max-width: 500px) {
-.siteform__div {
-	background: rgba(71, 71, 71, 0.75);
-	color:whitesmoke
-}
-.siteform__btn  {
-	color:whitesmoke;
-}
-
+	.siteform__div {
+		background: rgba(71, 71, 71, 0.75);
+		color:whitesmoke
+	}
+	.siteform__btn  {
+		color:whitesmoke;
+	}
 }

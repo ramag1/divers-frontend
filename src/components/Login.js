@@ -13,7 +13,6 @@ const Login = () => {
 	};
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState(initialFormData);
-	const [error, setError] = useState(false);
 
 	const handleChange = (event) => {
 		setFormData((prevState) => {
@@ -24,7 +23,6 @@ const Login = () => {
 	//reference class code from authentication lecture
 	const _handleLogin = async (event) => {
 		event.preventDefault();
-		// console.log(formData);
 		try {
 			const response = await fetch(API_URL + 'token/login/', {
 				method: 'POST',
