@@ -54,7 +54,6 @@ function ReviewEdit(props) {
 					},
 					body: JSON.stringify(data),
 				});
-				console.log(response);
 				if (response.status === 204) {
 					// const data = await response.json();
 					navigate(`/mysites`);

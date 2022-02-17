@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate , Link} from 'react-router-dom';
 import './ReviewForm.css'
 
 function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
@@ -8,7 +8,7 @@ function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
 		<div className='reviewform__container'>
 			<div className='reviewform__div'>
 				<form onSubmit={handleSubmit}>
-					<div className='reviewform__field'>
+					<div className='reviewform__field' className='switch'>
 						Visited this site? <br />
 						<input
 							autoFocus
@@ -54,7 +54,7 @@ function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
 						/>
 						<label>No</label>
 					</div>
-					<div className='reviewform__field'>
+					<div className='reviewform__field' >
 						Add to Bucket List? <br />
 						<input
 							autoFocus
@@ -97,8 +97,8 @@ function ReviewForm({ handleSubmit, formData, handleChange , handleDelete}) {
 						Remove Site
 					</button> 
                     <br/>
-					<button className='reviewform__btn' onClick={<Navigate to= '/mysites'/>}>
-						Cancel
+					<button className='reviewform__btn'>
+						<Link to="/mysites">Cancel</Link>
 					</button>
 				</form>
 			</div>
