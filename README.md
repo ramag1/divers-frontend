@@ -34,3 +34,5 @@ As a user, I would like to see information on Ocean Conservation<br>
 As a user, I would like to easily share the dive site with a friend via WhatsApp<br>
 
 ## Open Issues & Challenges
+Working on implementing bootstrap to ensure a more streamlined UX across all components <br>
+
