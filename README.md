@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+## Project Description 
+Divers Discovery - a browser-based, full stack tool coded in React using JavaScript and CSS, supported by a backend coded in PostgreSQL, Python and Django.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Diving Tracker & Information app features a browsable catalog of global dive sites to add to your curated list of Visited sites, as well as a Bucket List of sites you wish to visit. Users can add their own dive sites if not visible in the seeded data.
 
-## Available Scripts
 
-In the project directory, you can run:
+Link to the [tool](https://divers-discovery.netlify.app/).
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Instructions
+Click on the link to the tool and navigate in your browser window.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Wire Frames  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MVP Goals
+As a user, I would like to browse a list of famous, global dive sites showing country, depth and type of site<br>
+As a user, I would like to add the sites I have visited to a Visited List<br>
+As a user, I would like to add the sites I wish to visit in the future to a Bucket List<br>
 
-### `npm run eject`
+### Stretch Goals
+As a user, I would like to be able to upload a photo of my diving certifications for reference
+As a user, I would like to add a “Favorites” tag to my favorite dive sites<br>
+As a user, I would like to see my Visited List filtered by Favorites<br>
+As a user, I would like to see the current weather at the sites I am browsing<br>
+As a user, I would like to see information on Ocean Conservation<br>
+As a user, I would like to easily share the dive site with a friend via WhatsApp<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Open Issues & Challenges
