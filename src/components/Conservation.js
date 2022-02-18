@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import YouTube from 'react-youtube';
 import './Conservation.css'
 
@@ -26,7 +25,6 @@ class Conservation extends React.Component {
 	}
 
 	_onReady(event) {
-		// access to player in all event handlers via event.target
 		event.target.pauseVideo();
 	}
 }
